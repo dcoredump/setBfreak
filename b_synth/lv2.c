@@ -338,8 +338,6 @@ void LV2_param_check(B3S *instance)
 {
        B3S* b3s = (B3S*)instance;
        bool set=false;
-       bool tmp1=false;
-       bool tmp2=false;
 
        // Drawbars
        set|=LV2toData(0,*b3s->drawbar_pedal_1);
@@ -388,23 +386,31 @@ void LV2_param_check(B3S *instance)
        }
 
        // Vibrato
-       tmp1=LV2toData(27,*b3s->vibrato);
-       tmp2=LV2toData(28,*b3s->vibratoupper);
-       if(tmp1 && tmp2)
-         setVibratoUpper((struct b_tonegen *)b3s->inst,tmp2);
-       tmp2=LV2toData(29,*b3s->vibratolower);
-       if(tmp1 && tmp2)
-         setVibratoLower((struct b_tonegen *)b3s->inst,tmp2);
+       set=LV2toData(27,*b3s->vibrato);
+       if(set)
+         setVibrato((struct b_tonegen *)b3s->inst,_data[27]);
+
+       set=LV2toData(28,*b3s->vibratoupper);
+       if(set && _data[28])
+         setVibratoUpper((struct b_tonegen *)b3s->inst,TRUE);
+       else
+         setVibratoUpper((struct b_tonegen *)b3s->inst,FALSE);
+
+       set=LV2toData(29,*b3s->vibratolower);
+       if(set && _data[29])
+         setVibratoLower((struct b_tonegen *)b3s->inst,TRUE);
+       else
+         setVibratoLower((struct b_tonegen *)b3s->inst,FALSE);
 
        // Perc
        set|=LV2toData(30,*b3s->perc);
        if(set==true)
        {
-           set=false;
            setPercussionEnabled((struct b_tonegen *)b3s->inst->synth,((_data[30]==0) ? FALSE : TRUE));
 
            if(_data[30]==1)
            {
+               set=false;
                set|=LV2toData(31,*b3s->percvol);
                set|=LV2toData(32,*b3s->percspeed);
                set|=LV2toData(33,*b3s->percharm);
@@ -440,27 +446,47 @@ void LV2_param_check(B3S *instance)
          b3s->inst->progs->programmes->transpose[TR_CHA_UM]=_data[38];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_UM);
        }
+unsigned int flags0 = b3s->inst->progs->programmes->flags[0];
+
+       if(flags0 & (FL_KSPLTL|FL_KSPLTP|FL_TRA_PD|FL_TRA_LM|FL_TRA_UM)) {
+        int b;
+        b  = (flags0 & FL_KSPLTP) ?  1 : 0;
+        b |= (flags0 & FL_KSPLTL) ?  2 : 0;
+        b |= (flags0 & FL_TRA_PD) ?  4 : 0;
+        b |= (flags0 & FL_TRA_LM) ?  8 : 0;
+        b |= (flags0 & FL_TRA_UM) ? 16 : 0;
+        setKeyboardSplitMulti ((struct b_tonegen *)b3s->inst->midicfg, b,
+                               b3s->inst->progs->programmes->keyboardSplitPedals,
+                               b3s->inst->progs->programmes->keyboardSplitLower,
+                               b3s->inst->progs->programmes->transpose[TR_CHA_PD],
+                               b3s->inst->progs->programmes->transpose[TR_CHA_LM],
+                               b3s->inst->progs->programmes->transpose[TR_CHA_UM]);
+      }
 
        // Transpose
        if(LV2toData(39,*b3s->transpose))
        {
          b3s->inst->progs->programmes->transpose[TR_TRANSP]=_data[39];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRANSP);
+         setKeyboardTranspose((struct b_tonegen *)b3s->inst->midicfg, b3s->inst->progs->programmes->transpose[TR_TRANSP]);
        }
        if(LV2toData(40,*b3s->transpose_upper))
        {
          b3s->inst->progs->programmes->transpose[TR_CHNL_A]=_data[40];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_A);
+         setKeyboardTransposeA((struct b_tonegen *)b3s->inst->midicfg, b3s->inst->progs->programmes->transpose[TR_CHNL_A]);
        }
        if(LV2toData(41,*b3s->transpose_lower))
        {
          b3s->inst->progs->programmes->transpose[TR_CHNL_B]=_data[41];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_B);
+         setKeyboardTransposeB((struct b_tonegen *)b3s->inst->midicfg,b3s->inst->progs->programmes->transpose[TR_CHNL_B]);
        }
        if(LV2toData(42,*b3s->transpose_pedals))
        {
          b3s->inst->progs->programmes->transpose[TR_CHNL_C]=_data[42];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_C);
+         setKeyboardTransposeC((struct b_tonegen *)b3s->inst->midicfg, b3s->inst->progs->programmes->transpose[TR_CHNL_C]);
        }
 }
 
