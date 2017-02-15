@@ -336,11 +336,11 @@ bool LV2toData(unsigned char param_num,float param_val)
 
 void LV2_param_check(B3S *instance)
 {
-       B3S* b3s = (B3S*)instance;
-       bool set=false;
+       B3S* b3s=(B3S*)instance;
+       bool set;
 
        // Drawbars
-       set|=LV2toData(0,*b3s->drawbar_pedal_1);
+       set=LV2toData(0,*b3s->drawbar_pedal_1);
        set|=LV2toData(1,*b3s->drawbar_pedal_2);
        set|=LV2toData(2,*b3s->drawbar_pedal_3);
        set|=LV2toData(3,*b3s->drawbar_pedal_4);
@@ -351,11 +351,10 @@ void LV2_param_check(B3S *instance)
        set|=LV2toData(8,*b3s->drawbar_pedal_9);
        if(set==true)
        {
-           set=false;
            setDrawBars(instance->inst,2,(unsigned int *)&_data[0]);
        }
 
-       set|=LV2toData(9,*b3s->drawbar_lower_1);
+       set=LV2toData(9,*b3s->drawbar_lower_1);
        set|=LV2toData(10,*b3s->drawbar_lower_2);
        set|=LV2toData(11,*b3s->drawbar_lower_3);
        set|=LV2toData(12,*b3s->drawbar_lower_4);
@@ -366,11 +365,10 @@ void LV2_param_check(B3S *instance)
        set|=LV2toData(17,*b3s->drawbar_lower_9);
        if(set==true)
        {
-           set=false;
            setDrawBars(instance->inst,1,(unsigned int *)&_data[9]);
        }
 
-       set|=LV2toData(18,*b3s->drawbar_upper_1);
+       set=LV2toData(18,*b3s->drawbar_upper_1);
        set|=LV2toData(19,*b3s->drawbar_upper_2);
        set|=LV2toData(20,*b3s->drawbar_upper_3);
        set|=LV2toData(21,*b3s->drawbar_upper_4);
@@ -381,29 +379,34 @@ void LV2_param_check(B3S *instance)
        set|=LV2toData(26,*b3s->drawbar_upper_9);
        if(set==true)
        {
-           set=false;
            setDrawBars(instance->inst,0,(unsigned int *)&_data[18]);
        }
 
        // Vibrato
        set=LV2toData(27,*b3s->vibrato);
-       if(set)
+       if(set==true)
          setVibrato((struct b_tonegen *)b3s->inst,_data[27]);
 
        set=LV2toData(28,*b3s->vibratoupper);
-       if(set && _data[28])
-         setVibratoUpper((struct b_tonegen *)b3s->inst,TRUE);
-       else
-         setVibratoUpper((struct b_tonegen *)b3s->inst,FALSE);
+       if(set==true)
+       {
+         if(_data[28]==1)
+           setVibratoUpper((struct b_tonegen *)b3s->inst,TRUE);
+         else
+           setVibratoUpper((struct b_tonegen *)b3s->inst,FALSE);
+       }
 
        set=LV2toData(29,*b3s->vibratolower);
-       if(set && _data[29])
-         setVibratoLower((struct b_tonegen *)b3s->inst,TRUE);
-       else
-         setVibratoLower((struct b_tonegen *)b3s->inst,FALSE);
+       if(set==true)
+       {
+         if(_data[29]==1)
+           setVibratoLower((struct b_tonegen *)b3s->inst,TRUE);
+         else
+           setVibratoLower((struct b_tonegen *)b3s->inst,FALSE);
+       }
 
        // Perc
-       set|=LV2toData(30,*b3s->perc);
+       set=LV2toData(30,*b3s->perc);
        if(set==true)
        {
            setPercussionEnabled((struct b_tonegen *)b3s->inst->synth,((_data[30]==0) ? FALSE : TRUE));
@@ -421,8 +424,7 @@ void LV2_param_check(B3S *instance)
 
        }
        // Keysplit
-       set=false;
-       if(set|=LV2toData(34,*b3s->keysplitpedals))
+       if(set=LV2toData(34,*b3s->keysplitpedals))
        {
          b3s->inst->progs->programmes->keyboardSplitPedals=(short)_data[34];
          b3s->inst->progs->programmes->flags[0]|=(FL_INUSE|FL_KSPLTL);
