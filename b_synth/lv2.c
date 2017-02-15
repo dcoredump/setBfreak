@@ -421,31 +421,34 @@ void LV2_param_check(B3S *instance)
 
        }
        // Keysplit
-       if(LV2toData(34,*b3s->keysplitpedals))
+       set=false;
+       if(set|=LV2toData(34,*b3s->keysplitpedals))
        {
          b3s->inst->progs->programmes->keyboardSplitPedals=(short)_data[34];
          b3s->inst->progs->programmes->flags[0]|=(FL_INUSE|FL_KSPLTL);
        }
-       if(LV2toData(35,*b3s->keysplitlowers))
+       if(set|=LV2toData(35,*b3s->keysplitlowers))
        {
          b3s->inst->progs->programmes->keyboardSplitLower = (short)_data[35];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_KSPLTL);
        }
-       if(LV2toData(36,*b3s->trssplitpedals))
+       if(set|=LV2toData(36,*b3s->trssplitpedals))
        {
          b3s->inst->progs->programmes->transpose[TR_CHA_PD]=_data[36];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_PD);
        }
-       if(LV2toData(37,*b3s->trssplitlower))
+       if(set|=LV2toData(37,*b3s->trssplitlower))
        {
          b3s->inst->progs->programmes->transpose[TR_CHA_LM]=_data[37];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_LM);
        }
-       if(LV2toData(38,*b3s->trssplitupper))
+       if(set|=LV2toData(38,*b3s->trssplitupper))
        {
          b3s->inst->progs->programmes->transpose[TR_CHA_UM]=_data[38];
          b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_UM);
        }
+       if(set)
+       {
 unsigned int flags0 = b3s->inst->progs->programmes->flags[0];
 
        if(flags0 & (FL_KSPLTL|FL_KSPLTP|FL_TRA_PD|FL_TRA_LM|FL_TRA_UM)) {
@@ -462,6 +465,7 @@ unsigned int flags0 = b3s->inst->progs->programmes->flags[0];
                                b3s->inst->progs->programmes->transpose[TR_CHA_LM],
                                b3s->inst->progs->programmes->transpose[TR_CHA_UM]);
       }
+       }
 
        // Transpose
        if(LV2toData(39,*b3s->transpose))
