@@ -64,16 +64,6 @@
 #define ANY_TRSP (FL_TRA_PL | FL_TRA_LM | FL_TRA_UM | FL_TRANSP | \
                   FL_TRCH_A | FL_TRCH_B | FL_TRCH_C)
 
-/* Indices to the transpose array in struct _programme. */
-
-#define TR_TRANSP 0		/* Global transpose value */
-#define TR_CHNL_A 1		/* Channel A transpose */
-#define TR_CHNL_B 2		/* Channel B transpose */
-#define TR_CHNL_C 3		/* Channel C transpose */
-#define TR_CHA_UM 4		/* Channel A upper split region */
-#define TR_CHA_LM 5		/* Channel A lower split region */
-#define TR_CHA_PD 6		/* Channel A pedal split region */
-
 /*
  * The   short scanner   field has the following bit assignments:
  *

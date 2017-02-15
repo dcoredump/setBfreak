@@ -64,10 +64,51 @@
 #include "midnam_lv2.h"
 
 typedef enum {
-  B3S_MIDIIN = 0,
-  B3S_MIDIOUT,
-  B3S_OUTL,
-  B3S_OUTR
+  B3S_MIDIIN = 0,	// 0
+  B3S_OUT,		// 1
+  B3S_DB_PEDAL_1,       // 2
+  B3S_DB_PEDAL_2,       // 3
+  B3S_DB_PEDAL_3,       // 4
+  B3S_DB_PEDAL_4,       // 5
+  B3S_DB_PEDAL_5,       // 6
+  B3S_DB_PEDAL_6,       // 7
+  B3S_DB_PEDAL_7,       // 8 
+  B3S_DB_PEDAL_8,       // 9
+  B3S_DB_PEDAL_9,       //10
+  B3S_DB_LOWER_1,       //11
+  B3S_DB_LOWER_2,       //12
+  B3S_DB_LOWER_3,       //13
+  B3S_DB_LOWER_4,       //14
+  B3S_DB_LOWER_5,       //15
+  B3S_DB_LOWER_6,       //16
+  B3S_DB_LOWER_7,       //17
+  B3S_DB_LOWER_8,       //18
+  B3S_DB_LOWER_9,       //19
+  B3S_DB_UPPER_1,       //20
+  B3S_DB_UPPER_2,       //21
+  B3S_DB_UPPER_3,       //22
+  B3S_DB_UPPER_4,       //23
+  B3S_DB_UPPER_5,       //24
+  B3S_DB_UPPER_6,       //25
+  B3S_DB_UPPER_7,       //26
+  B3S_DB_UPPER_8,       //27
+  B3S_DB_UPPER_9,       //28
+  B3S_VIBRATO,          //29
+  B3S_VIBRATOUPPER,     //30
+  B3S_VIBRATOLOWER,     //31
+  B3S_PERC,             //32
+  B3S_PERCVOL,          //33
+  B3S_PERCSPEED,        //34
+  B3S_PERCHARM,         //35
+  B3S_KEYSPLITPEDALS,   //36
+  B3S_KEYSPLITLOWERS,   //37
+  B3S_TRSSPLITPEDALS,   //38
+  B3S_TRSSPLITLOWER,    //39
+  B3S_TRSSPLITUPPER,    //40
+  B3S_TRANSPOSE,        //41
+  B3S_TRANSPOSE_UPPER,  //42
+  B3S_TRANSPOSE_LOWER,  //43
+  B3S_TRANSPOSE_PEDALS  //44
 } PortIndex;
 
 typedef struct {
@@ -77,19 +118,59 @@ typedef struct {
   LV2_Midnam*          midnam;
 
   const LV2_Atom_Sequence* midiin;
-  LV2_Atom_Sequence* midiout;
-  float* outL;
-  float* outR;
-
+  float* out;
+  float* drawbar_pedal_1;
+  float* drawbar_pedal_2;
+  float* drawbar_pedal_3;
+  float* drawbar_pedal_4;
+  float* drawbar_pedal_5;
+  float* drawbar_pedal_6;
+  float* drawbar_pedal_7;
+  float* drawbar_pedal_8;
+  float* drawbar_pedal_9;
+  float* drawbar_lower_1;
+  float* drawbar_lower_2;
+  float* drawbar_lower_3;
+  float* drawbar_lower_4;
+  float* drawbar_lower_5;
+  float* drawbar_lower_6;
+  float* drawbar_lower_7;
+  float* drawbar_lower_8;
+  float* drawbar_lower_9;
+  float* drawbar_upper_1;
+  float* drawbar_upper_2;
+  float* drawbar_upper_3;
+  float* drawbar_upper_4;
+  float* drawbar_upper_5;
+  float* drawbar_upper_6;
+  float* drawbar_upper_7;
+  float* drawbar_upper_8;
+  float* drawbar_upper_9;
+  float* vibrato;
+  float* vibratoupper;
+  float* vibratolower;
+  float* perc;
+  float* percvol;
+  float* percspeed;
+  float* percharm;
+  float* keysplitpedals;
+  float* keysplitlowers;
+  float* trssplitpedals;
+  float* trssplitlower;
+  float* trssplitupper;
+  float* transpose;
+  float* transpose_upper;
+  float* transpose_lower;
+  float* transpose_pedals;
   LV2_URID_Map* map;
   setBfreeURIs uris;
 
   int   boffset;
   float bufA [BUFFER_SIZE_SAMPLES];
-  float bufB [BUFFER_SIZE_SAMPLES];
-  float bufC [BUFFER_SIZE_SAMPLES];
-  float bufD [2][BUFFER_SIZE_SAMPLES]; // drum, tmp.
-  float bufL [2][BUFFER_SIZE_SAMPLES]; // leslie, out
+  //float bufB [BUFFER_SIZE_SAMPLES];
+  //float bufC [BUFFER_SIZE_SAMPLES];
+  //float bufD [2][BUFFER_SIZE_SAMPLES]; // drum, tmp.
+  //float bufL [2][BUFFER_SIZE_SAMPLES]; // leslie, out
 
   short suspend_ui_msg;
   short update_gui_now;
@@ -127,6 +208,10 @@ struct worknfo {
   char msg[1024];
 };
 
+uint32_t _k_rate_counter=0;
+float _data_float[43];
+int32_t _data[43];
+
 /* main synth wrappers */
 
 const ConfigDoc *mainDoc () { return NULL;}
@@ -159,9 +244,9 @@ void initSynth(struct b_instance *inst, double rate) {
   /* initAll() */
   initToneGenerator (inst->synth, inst->midicfg);
   initVibrato (inst->synth, inst->midicfg);
-  initPreamp (inst->preamp, inst->midicfg);
-  initReverb (inst->reverb, inst->midicfg, rate);
-  initWhirl (inst->whirl, inst->midicfg, rate);
+  //initPreamp (inst->preamp, inst->midicfg);
+  //initReverb (inst->reverb, inst->midicfg, rate);
+  //initWhirl (inst->whirl, inst->midicfg, rate);
   initRunningConfig(inst->state, inst->midicfg);
   /* end - initAll() */
 
@@ -185,11 +270,11 @@ static void
 freeSynth(struct b_instance *inst)
 {
   if (!inst) return;
-  freeReverb(inst->reverb);
-  freeWhirl(inst->whirl);
+  //freeReverb(inst->reverb);
+  //freeWhirl(inst->whirl);
   freeToneGenerator(inst->synth);
   freeMidiCfg(inst->midicfg);
-  freePreamp(inst->preamp);
+  //freePreamp(inst->preamp);
   freeProgs(inst->progs);
   freeRunningConfig(inst->state);
 }
@@ -238,8 +323,155 @@ static void scramble (B3S *b3s, float * const buf, const size_t n_samples)
 }
 #endif
 
-static uint32_t synthSound (B3S *instance, uint32_t written, uint32_t nframes, float **out) {
+bool LV2toData(unsigned char param_num,float param_val)
+{
+  if(param_val!=_data_float[param_num])
+  {
+    _data_float[param_num]=param_val;
+    _data[param_num]=(int32_t)param_val;
+    return(true);
+  }
+  return(false);
+}
+
+void LV2_param_check(B3S *instance)
+{
+       B3S* b3s = (B3S*)instance;
+       bool set=false;
+       bool tmp1=false;
+       bool tmp2=false;
+
+       // Drawbars
+       set|=LV2toData(0,*b3s->drawbar_pedal_1);
+       set|=LV2toData(1,*b3s->drawbar_pedal_2);
+       set|=LV2toData(2,*b3s->drawbar_pedal_3);
+       set|=LV2toData(3,*b3s->drawbar_pedal_4);
+       set|=LV2toData(4,*b3s->drawbar_pedal_5);
+       set|=LV2toData(5,*b3s->drawbar_pedal_6);
+       set|=LV2toData(6,*b3s->drawbar_pedal_7);
+       set|=LV2toData(7,*b3s->drawbar_pedal_8);
+       set|=LV2toData(8,*b3s->drawbar_pedal_9);
+       if(set==true)
+       {
+           set=false;
+           setDrawBars(instance->inst,2,(unsigned int *)&_data[0]);
+       }
+
+       set|=LV2toData(9,*b3s->drawbar_lower_1);
+       set|=LV2toData(10,*b3s->drawbar_lower_2);
+       set|=LV2toData(11,*b3s->drawbar_lower_3);
+       set|=LV2toData(12,*b3s->drawbar_lower_4);
+       set|=LV2toData(13,*b3s->drawbar_lower_5);
+       set|=LV2toData(14,*b3s->drawbar_lower_6);
+       set|=LV2toData(15,*b3s->drawbar_lower_7);
+       set|=LV2toData(16,*b3s->drawbar_lower_8);
+       set|=LV2toData(17,*b3s->drawbar_lower_9);
+       if(set==true)
+       {
+           set=false;
+           setDrawBars(instance->inst,1,(unsigned int *)&_data[9]);
+       }
+
+       set|=LV2toData(18,*b3s->drawbar_upper_1);
+       set|=LV2toData(19,*b3s->drawbar_upper_2);
+       set|=LV2toData(20,*b3s->drawbar_upper_3);
+       set|=LV2toData(21,*b3s->drawbar_upper_4);
+       set|=LV2toData(22,*b3s->drawbar_upper_5);
+       set|=LV2toData(23,*b3s->drawbar_upper_6);
+       set|=LV2toData(24,*b3s->drawbar_upper_7);
+       set|=LV2toData(25,*b3s->drawbar_upper_8);
+       set|=LV2toData(26,*b3s->drawbar_upper_9);
+       if(set==true)
+       {
+           set=false;
+           setDrawBars(instance->inst,0,(unsigned int *)&_data[18]);
+       }
+
+       // Vibrato
+       tmp1=LV2toData(27,*b3s->vibrato);
+       tmp2=LV2toData(28,*b3s->vibratoupper);
+       if(tmp1 && tmp2)
+         setVibratoUpper((struct b_tonegen *)b3s->inst,tmp2);
+       tmp2=LV2toData(29,*b3s->vibratolower);
+       if(tmp1 && tmp2)
+         setVibratoLower((struct b_tonegen *)b3s->inst,tmp2);
+
+       // Perc
+       set|=LV2toData(30,*b3s->perc);
+       if(set==true)
+       {
+           set=false;
+           setPercussionEnabled((struct b_tonegen *)b3s->inst->synth,((_data[30]==0) ? FALSE : TRUE));
+
+           if(_data[30]==1)
+           {
+               set|=LV2toData(31,*b3s->percvol);
+               set|=LV2toData(32,*b3s->percspeed);
+               set|=LV2toData(33,*b3s->percharm);
+               setPercussionVolume((struct b_tonegen *)b3s->inst->synth,_data[31]==0 ? FALSE : TRUE);
+               setPercussionFast((struct b_tonegen *)b3s->inst->synth,_data[32]==0 ? FALSE : TRUE);
+               setPercussionFirst((struct b_tonegen *)b3s->inst->synth,_data[33]==0 ? FALSE : TRUE);
+           }
+
+       }
+       // Keysplit
+       if(LV2toData(34,*b3s->keysplitpedals))
+       {
+         b3s->inst->progs->programmes->keyboardSplitPedals=(short)_data[34];
+         b3s->inst->progs->programmes->flags[0]|=(FL_INUSE|FL_KSPLTL);
+       }
+       if(LV2toData(35,*b3s->keysplitlowers))
+       {
+         b3s->inst->progs->programmes->keyboardSplitLower = (short)_data[35];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_KSPLTL);
+       }
+       if(LV2toData(36,*b3s->trssplitpedals))
+       {
+         b3s->inst->progs->programmes->transpose[TR_CHA_PD]=_data[36];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_PD);
+       }
+       if(LV2toData(37,*b3s->trssplitlower))
+       {
+         b3s->inst->progs->programmes->transpose[TR_CHA_LM]=_data[37];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_LM);
+       }
+       if(LV2toData(38,*b3s->trssplitupper))
+       {
+         b3s->inst->progs->programmes->transpose[TR_CHA_UM]=_data[38];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_UM);
+       }
+
+       // Transpose
+       if(LV2toData(39,*b3s->transpose))
+       {
+         b3s->inst->progs->programmes->transpose[TR_TRANSP]=_data[39];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRANSP);
+       }
+       if(LV2toData(40,*b3s->transpose_upper))
+       {
+         b3s->inst->progs->programmes->transpose[TR_CHNL_A]=_data[40];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_A);
+       }
+       if(LV2toData(41,*b3s->transpose_lower))
+       {
+         b3s->inst->progs->programmes->transpose[TR_CHNL_B]=_data[41];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_B);
+       }
+       if(LV2toData(42,*b3s->transpose_pedals))
+       {
+         b3s->inst->progs->programmes->transpose[TR_CHNL_C]=_data[42];
+         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_C);
+       }
+}
+
+static uint32_t synthSound (B3S *instance, uint32_t written, uint32_t nframes, float *out) {
   B3S* b3s = (B3S*)instance;
+
+  // LV2 parameter
+  if(_k_rate_counter++%32)
+  {
+    LV2_param_check(b3s);
+  }
 
   while (written < nframes) {
     int nremain = nframes - written;
@@ -247,19 +479,25 @@ static uint32_t synthSound (B3S *instance, uint32_t written, uint32_t nframes, f
     if (b3s->boffset >= BUFFER_SIZE_SAMPLES)  {
       b3s->boffset = 0;
       oscGenerateFragment (instance->inst->synth, b3s->bufA, BUFFER_SIZE_SAMPLES);
-      preamp (instance->inst->preamp, b3s->bufA, b3s->bufB, BUFFER_SIZE_SAMPLES);
-      reverb (instance->inst->reverb, b3s->bufB, b3s->bufC, BUFFER_SIZE_SAMPLES);
+      //preamp (instance->inst->preamp, b3s->bufA, b3s->bufB, BUFFER_SIZE_SAMPLES);
+      //reverb (instance->inst->reverb, b3s->bufB, b3s->bufC, BUFFER_SIZE_SAMPLES);
 #ifdef WITH_SIGNATURE
       scramble (b3s, b3s->bufC, BUFFER_SIZE_SAMPLES);
 #endif
-      whirlProc3(instance->inst->whirl, b3s->bufC, b3s->bufL[0], b3s->bufL[1], b3s->bufD[0], b3s->bufD[1], BUFFER_SIZE_SAMPLES);
+      //whirlProc3(instance->inst->whirl, b3s->bufC, b3s->bufL[0], b3s->bufL[1], b3s->bufD[0], b3s->bufD[1], BUFFER_SIZE_SAMPLES);
 
+      // reduce loudness (must be done as we don't use the preamp!)
+      for(uint32_t i=0;i<BUFFER_SIZE_SAMPLES;i++)
+      {
+        b3s->bufA[i]*=0.3567;
+      }
     }
 
     int nread = MIN(nremain, (BUFFER_SIZE_SAMPLES - b3s->boffset));
 
-    memcpy(&out[0][written], &b3s->bufL[0][b3s->boffset], nread*sizeof(float));
-    memcpy(&out[1][written], &b3s->bufL[1][b3s->boffset], nread*sizeof(float));
+    //memcpy(&out[0][written], &b3s->bufL[0][b3s->boffset], nread*sizeof(float));
+    //memcpy(&out[1][written], &b3s->bufL[1][b3s->boffset], nread*sizeof(float));
+    memcpy(&out[written], &b3s->bufA[0], nread*sizeof(float));
 
     written+=nread;
     b3s->boffset+=nread;
@@ -267,7 +505,7 @@ static uint32_t synthSound (B3S *instance, uint32_t written, uint32_t nframes, f
   return written;
 }
 
-static void mctl_cb(int fnid, const char *fn, unsigned char val, midiCCmap *mm, void *arg) {
+/* static void mctl_cb(int fnid, const char *fn, unsigned char val, midiCCmap *mm, void *arg) {
   B3S* b3s = (B3S*)arg;
 #ifdef DEBUGPRINT
   fprintf(stderr, "xfn: %d (\"%s\", %d) mm:%s\n", fnid, fn, val, mm?"yes":"no");
@@ -291,7 +529,7 @@ static void mctl_cb(int fnid, const char *fn, unsigned char val, midiCCmap *mm, 
   if (b3s->midnam && fn && !strcmp (fn, "special.midimap")) {
     b3s->midnam->update (b3s->midnam->handle);
   }
-}
+} */
 
 static void rc_cb(int fnid, const char *key, const char *kv, unsigned char val, void *arg) {
   B3S* b3s = (B3S*)arg;
@@ -347,11 +585,11 @@ static void mcc_cb(const char *fnname, const unsigned char chn, const unsigned c
 void allocSynth(struct b_instance *inst) {
   inst->state = allocRunningConfig();
   inst->progs = allocProgs();
-  inst->reverb = allocReverb();
-  inst->whirl = allocWhirl();
+  //inst->reverb = allocReverb();
+  //inst->whirl = allocWhirl();
   inst->midicfg = allocMidiCfg(inst->state);
   inst->synth = allocTonegen();
-  inst->preamp = allocPreamp();
+  //inst->preamp = allocPreamp();
 
   initControllerTable (inst->midicfg);
 #if 1
@@ -812,7 +1050,7 @@ postrun (B3S* b3s)
     b3s->inst = b3s->inst_offline;
     b3s->inst_offline = old;
     setControlFunctionCallback(b3s->inst_offline->midicfg, NULL, NULL);
-    setControlFunctionCallback(b3s->inst->midicfg, mctl_cb, b3s);
+    //setControlFunctionCallback(b3s->inst->midicfg, mctl_cb, b3s);
 
     /* hide midi-maps, stop possibly pending midi-bind process */
     forge_kvcontrolmessage(&b3s->forge, &b3s->uris, "special.midimap", (int32_t) 0);
@@ -953,7 +1191,7 @@ instantiate(const LV2_Descriptor*     descriptor,
   }
 #endif
 
-  setControlFunctionCallback(b3s->inst->midicfg, mctl_cb, b3s);
+  //setControlFunctionCallback(b3s->inst->midicfg, mctl_cb, b3s);
   initSynth(b3s->inst, rate);
 
 #ifdef JACK_DESCRIPT
@@ -1039,14 +1277,137 @@ connect_port(LV2_Handle instance,
     case B3S_MIDIIN:
       b3s->midiin = (const LV2_Atom_Sequence*)data;
       break;
-    case B3S_MIDIOUT:
-      b3s->midiout = (LV2_Atom_Sequence*)data;
+    case B3S_OUT:
+      b3s->out = (float*)data;
       break;
-    case B3S_OUTL:
-      b3s->outL = (float*)data;
+    case B3S_DB_PEDAL_1:
+      b3s->drawbar_pedal_1 = (float*)data;
       break;
-    case B3S_OUTR:
-      b3s->outR = (float*)data;
+    case B3S_DB_PEDAL_2:
+      b3s->drawbar_pedal_2 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_3:
+      b3s->drawbar_pedal_3 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_4:
+      b3s->drawbar_pedal_4 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_5:
+      b3s->drawbar_pedal_5 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_6:
+      b3s->drawbar_pedal_6 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_7:
+      b3s->drawbar_pedal_7 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_8:
+      b3s->drawbar_pedal_8 = (float*)data;
+      break;
+    case B3S_DB_PEDAL_9:
+      b3s->drawbar_pedal_9 = (float*)data;
+      break;
+    case B3S_DB_LOWER_1:
+      b3s->drawbar_lower_1 = (float*)data;
+      break;
+    case B3S_DB_LOWER_2:
+      b3s->drawbar_lower_2 = (float*)data;
+      break;
+    case B3S_DB_LOWER_3:
+      b3s->drawbar_lower_3 = (float*)data;
+      break;
+    case B3S_DB_LOWER_4:
+      b3s->drawbar_lower_4 = (float*)data;
+      break;
+    case B3S_DB_LOWER_5:
+      b3s->drawbar_lower_5 = (float*)data;
+      break;
+    case B3S_DB_LOWER_6:
+      b3s->drawbar_lower_6 = (float*)data;
+      break;
+    case B3S_DB_LOWER_7:
+      b3s->drawbar_lower_7 = (float*)data;
+      break;
+    case B3S_DB_LOWER_8:
+      b3s->drawbar_lower_8 = (float*)data;
+      break;
+    case B3S_DB_LOWER_9:
+      b3s->drawbar_lower_9 = (float*)data;
+      break;
+    case B3S_DB_UPPER_1:
+      b3s->drawbar_upper_1 = (float*)data;
+      break;
+    case B3S_DB_UPPER_2:
+      b3s->drawbar_upper_2 = (float*)data;
+      break;
+    case B3S_DB_UPPER_3:
+      b3s->drawbar_upper_3 = (float*)data;
+      break;
+    case B3S_DB_UPPER_4:
+      b3s->drawbar_upper_4 = (float*)data;
+      break;
+    case B3S_DB_UPPER_5:
+      b3s->drawbar_upper_5 = (float*)data;
+      break;
+    case B3S_DB_UPPER_6:
+      b3s->drawbar_upper_6 = (float*)data;
+      break;
+    case B3S_DB_UPPER_7:
+      b3s->drawbar_upper_7 = (float*)data;
+      break;
+    case B3S_DB_UPPER_8:
+      b3s->drawbar_upper_8 = (float*)data;
+      break;
+    case B3S_DB_UPPER_9:
+      b3s->drawbar_upper_9 = (float*)data;
+      break;
+    case B3S_VIBRATO:
+      b3s->vibrato = (float*)data;
+      break;
+    case B3S_VIBRATOUPPER:
+      b3s->vibratoupper = (float*)data;
+      break;
+    case B3S_VIBRATOLOWER:
+      b3s->vibratolower = (float*)data;
+      break;
+    case B3S_PERC:
+      b3s->perc = (float*)data;
+      break;
+    case B3S_PERCVOL:
+      b3s->percvol = (float*)data;
+      break;
+    case B3S_PERCSPEED:
+      b3s->percspeed = (float*)data;
+      break;
+    case B3S_PERCHARM:
+      b3s->percharm = (float*)data;
+      break;
+    case B3S_KEYSPLITPEDALS:
+      b3s->keysplitpedals = (float*)data;
+      break;
+    case B3S_KEYSPLITLOWERS:
+      b3s->keysplitlowers = (float*)data;
+      break;
+    case B3S_TRSSPLITPEDALS:
+      b3s->trssplitpedals = (float*)data;
+      break;
+    case B3S_TRSSPLITLOWER:
+      b3s->trssplitlower = (float*)data;
+      break;
+    case B3S_TRSSPLITUPPER:
+      b3s->trssplitupper = (float*)data;
+      break;
+    case B3S_TRANSPOSE:
+      b3s->transpose = (float*)data;
+      break;
+    case B3S_TRANSPOSE_UPPER:
+      b3s->transpose_upper = (float*)data;
+      break;
+    case B3S_TRANSPOSE_LOWER:
+      b3s->transpose_lower = (float*)data;
+      break;
+    case B3S_TRANSPOSE_PEDALS:
+      b3s->transpose_pedals = (float*)data;
       break;
   }
 }
@@ -1062,14 +1423,13 @@ static void
 run(LV2_Handle instance, uint32_t n_samples)
 {
   B3S* b3s = (B3S*)instance;
-  float* audio[2];
+  float* audio;
   bool dirty = false;
 
-  audio[0] = b3s->outL;
-  audio[1] = b3s->outR;
+  audio = b3s->out;
 
   /* prepare outgoing MIDI */
-  const uint32_t capacity = b3s->midiout->atom.size;
+/*  const uint32_t capacity = b3s->midiout->atom.size;
 
   static bool warning_printed = false;
   if (!warning_printed && capacity < 4096) {
@@ -1080,6 +1440,7 @@ run(LV2_Handle instance, uint32_t n_samples)
   }
   lv2_atom_forge_set_buffer(&b3s->forge, (uint8_t*)b3s->midiout, capacity);
   lv2_atom_forge_sequence_head(&b3s->forge, &b3s->frame, 0);
+*/
 
   uint32_t written = 0;
 

@@ -53,6 +53,16 @@ typedef struct _programme {
   short        transpose[7];
 } Programme;
 
+/* Indices to the transpose array in struct _programme. */
+
+#define TR_TRANSP 0             /* Global transpose value */
+#define TR_CHNL_A 1             /* Channel A transpose */
+#define TR_CHNL_B 2             /* Channel B transpose */
+#define TR_CHNL_C 3             /* Channel C transpose */
+#define TR_CHA_UM 4             /* Channel A upper split region */
+#define TR_CHA_LM 5             /* Channel A lower split region */
+#define TR_CHA_PD 6             /* Channel A pedal split region */
+
 /* Flag bits used in the first field */
 
 #define FL_INUSE  0x0001	/* Record is in use */

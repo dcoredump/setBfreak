@@ -1,7 +1,7 @@
 # TODO include this only once and export variables
 
 PREFIX ?= /usr/local
-OPTIMIZATIONS ?= -msse -msse2 -mfpmath=sse -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only
+OPTIMIZATIONS ?=   -ffast-math -fomit-frame-pointer -O3 -fno-finite-math-only
 ENABLE_CONVOLUTION ?= no
 FONTFILE?=/usr/share/fonts/truetype/ttf-bitstream-vera/VeraBd.ttf
 VERSION?=$(shell git describe --tags HEAD 2>/dev/null | sed 's/-g.*$$//;s/^v//' || true)
@@ -19,7 +19,7 @@ LV2VERSION=$(VERSION)
 
 bindir = $(PREFIX)/bin
 sharedir = $(PREFIX)/share/setBfree
-lv2dir = $(PREFIX)/lib/lv2
+lv2dir = /zynthian/zynthian-plugins/lv2
 
 CFLAGS ?= $(OPTIMIZATIONS) -Wall
 ifeq ($(XWIN),)
