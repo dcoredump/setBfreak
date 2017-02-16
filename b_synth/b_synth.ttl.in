@@ -339,15 +339,15 @@
                     rdfs:label "Vibrato max" ;
                     rdfs:comment "v3" ;
                 ], [
-                    rdf:value 129 ;
+                    rdf:value 4 ;
                     rdfs:label "Chorus min" ;
                     rdfs:comment "c1" ;
                 ], [
-                    rdf:value 130 ;
+                    rdf:value 5 ;
                     rdfs:label "Chorus med" ;
                     rdfs:comment "c2" ;
                 ], [
-                    rdf:value 131 ;
+                    rdf:value 6 ;
                     rdfs:label "Chorus max" ;
                     rdfs:comment "c3" ;
                 ];

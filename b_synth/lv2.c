@@ -385,7 +385,29 @@ void LV2_param_check(B3S *instance)
        // Vibrato
        set=LV2toData(27,*b3s->vibrato);
        if(set==true)
-         setVibrato((struct b_tonegen *)b3s->inst,_data[27]);
+       {
+         uint8_t tmp=0;
+
+         switch(_data[27])
+         {
+           case 0:
+           case 1:
+           case 2:
+           case 3:
+             tmp=_data[27];
+             break;
+           case 4:
+             tmp=0x81;
+             break;
+           case 5:
+             tmp=0x82;
+             break;
+           case 6:
+             tmp=0x83;
+             break;
+         }
+         setVibrato((struct b_tonegen *)b3s->inst,tmp);
+       }
 
        set=LV2toData(28,*b3s->vibratoupper);
        if(set==true)
@@ -424,75 +446,49 @@ void LV2_param_check(B3S *instance)
 
        }
        // Keysplit
-       if(set=LV2toData(34,*b3s->keysplitpedals))
+       uint8_t b=0;
+
+       if((set=LV2toData(34,*b3s->keysplitpedals)))
        {
-         b3s->inst->progs->programmes->keyboardSplitPedals=(short)_data[34];
-         b3s->inst->progs->programmes->flags[0]|=(FL_INUSE|FL_KSPLTL);
+         b|=1;
        }
        if(set|=LV2toData(35,*b3s->keysplitlowers))
        {
-         b3s->inst->progs->programmes->keyboardSplitLower = (short)_data[35];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_KSPLTL);
+         b|=2;
        }
        if(set|=LV2toData(36,*b3s->trssplitpedals))
        {
-         b3s->inst->progs->programmes->transpose[TR_CHA_PD]=_data[36];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_PD);
+         b|=4;
        }
        if(set|=LV2toData(37,*b3s->trssplitlower))
        {
-         b3s->inst->progs->programmes->transpose[TR_CHA_LM]=_data[37];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_LM);
+         b|=8;
        }
        if(set|=LV2toData(38,*b3s->trssplitupper))
        {
-         b3s->inst->progs->programmes->transpose[TR_CHA_UM]=_data[38];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRA_UM);
+         b|=16;
        }
        if(set)
        {
-unsigned int flags0 = b3s->inst->progs->programmes->flags[0];
-
-       if(flags0 & (FL_KSPLTL|FL_KSPLTP|FL_TRA_PD|FL_TRA_LM|FL_TRA_UM)) {
-        int b;
-        b  = (flags0 & FL_KSPLTP) ?  1 : 0;
-        b |= (flags0 & FL_KSPLTL) ?  2 : 0;
-        b |= (flags0 & FL_TRA_PD) ?  4 : 0;
-        b |= (flags0 & FL_TRA_LM) ?  8 : 0;
-        b |= (flags0 & FL_TRA_UM) ? 16 : 0;
-        setKeyboardSplitMulti ((struct b_tonegen *)b3s->inst->midicfg, b,
-                               b3s->inst->progs->programmes->keyboardSplitPedals,
-                               b3s->inst->progs->programmes->keyboardSplitLower,
-                               b3s->inst->progs->programmes->transpose[TR_CHA_PD],
-                               b3s->inst->progs->programmes->transpose[TR_CHA_LM],
-                               b3s->inst->progs->programmes->transpose[TR_CHA_UM]);
-      }
+         setKeyboardSplitMulti ((struct b_tonegen *)b3s->inst->midicfg,b,_data[34],_data[35],_data[36],_data[37],_data[38]);
        }
 
        // Transpose
        if(LV2toData(39,*b3s->transpose))
        {
-         b3s->inst->progs->programmes->transpose[TR_TRANSP]=_data[39];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRANSP);
-         setKeyboardTranspose((struct b_tonegen *)b3s->inst->midicfg, b3s->inst->progs->programmes->transpose[TR_TRANSP]);
+         setKeyboardTranspose((struct b_tonegen *)b3s->inst->midicfg,_data[39]);
        }
        if(LV2toData(40,*b3s->transpose_upper))
        {
-         b3s->inst->progs->programmes->transpose[TR_CHNL_A]=_data[40];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_A);
-         setKeyboardTransposeA((struct b_tonegen *)b3s->inst->midicfg, b3s->inst->progs->programmes->transpose[TR_CHNL_A]);
+         setKeyboardTransposeA((struct b_tonegen *)b3s->inst->midicfg,_data[40]);
        }
        if(LV2toData(41,*b3s->transpose_lower))
        {
-         b3s->inst->progs->programmes->transpose[TR_CHNL_B]=_data[41];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_B);
-         setKeyboardTransposeB((struct b_tonegen *)b3s->inst->midicfg,b3s->inst->progs->programmes->transpose[TR_CHNL_B]);
+         setKeyboardTransposeB((struct b_tonegen *)b3s->inst->midicfg,_data[41]);
        }
        if(LV2toData(42,*b3s->transpose_pedals))
        {
-         b3s->inst->progs->programmes->transpose[TR_CHNL_C]=_data[42];
-         b3s->inst->progs->programmes->flags[0] |= (FL_INUSE|FL_TRCH_C);
-         setKeyboardTransposeC((struct b_tonegen *)b3s->inst->midicfg, b3s->inst->progs->programmes->transpose[TR_CHNL_C]);
+         setKeyboardTransposeC((struct b_tonegen *)b3s->inst->midicfg,_data[42]);
        }
 }
 
