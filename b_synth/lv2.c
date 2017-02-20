@@ -391,10 +391,16 @@ void LV2_param_check(B3S *instance)
          switch(_data[27])
          {
            case 0:
+             tmp=0x00;
+             break;
            case 1:
+             tmp=0x01;
+             break;
            case 2:
+             tmp=0x02;
+             break;
            case 3:
-             tmp=_data[27];
+             tmp=0x03;
              break;
            case 4:
              tmp=0x81;
@@ -405,6 +411,8 @@ void LV2_param_check(B3S *instance)
            case 6:
              tmp=0x83;
              break;
+           default:
+             tmp=0x00;
          }
          setVibrato((struct b_tonegen *)b3s->inst,tmp);
        }
