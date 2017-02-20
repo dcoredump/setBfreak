@@ -129,6 +129,7 @@ typedef struct {
 	Filter flt[3];
 
 	/* internal state */
+	float o_motor;
 	float o_rev_select;
 	float o_horn_brake, o_horn_accel, o_horn_decel, o_horn_slow, o_horn_fast;
 	float o_drum_brake, o_drum_accel, o_drum_decel, o_drum_slow, o_drum_fast;
@@ -529,8 +530,12 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 	SETVALUE(drBrakePos, drum_brake, (double), );
 	SETVALUE(drumAcc, drum_accel, , );
 	SETVALUE(drumDec, drum_decel, , );
-	
-	setRevSelect(b3w->whirl,(int)*b3w->motor);
+
+	if(b3w->o_motor!=*b3w->motor)
+	{
+		b3w->o_motor=*b3w->motor;
+		setRevSelect(b3w->whirl,(*b3w->motor==0.0?1:2));
+	}
 
 	if (b3w->o_rev_select != *b3w->rev_select) {
 		const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0;
