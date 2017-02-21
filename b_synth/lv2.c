@@ -216,7 +216,7 @@ int32_t _data[43];
 
 const ConfigDoc *mainDoc () { return NULL;}
 
-int mainConfig (ConfigContext * cfg) {
+/*int mainConfig (ConfigContext * cfg) {
   if (strcasecmp (cfg->name, "midi.driver") == 0) {
     return 1;
   }
@@ -233,7 +233,7 @@ int mainConfig (ConfigContext * cfg) {
     return 1;
   }
   return 0;
-}
+} */
 
 double SampleRateD = 48000.0;
 
@@ -414,25 +414,25 @@ void LV2_param_check(B3S *instance)
            default:
              tmp=0x00;
          }
-         setVibrato((struct b_tonegen *)b3s->inst,tmp);
+         setVibrato((struct b_tonegen *)b3s->inst->synth,tmp);
        }
 
        set=LV2toData(28,*b3s->vibratoupper);
        if(set==true)
        {
          if(_data[28]==1)
-           setVibratoUpper((struct b_tonegen *)b3s->inst,TRUE);
+           setVibratoUpper((struct b_tonegen *)b3s->inst->synth,TRUE);
          else
-           setVibratoUpper((struct b_tonegen *)b3s->inst,FALSE);
+           setVibratoUpper((struct b_tonegen *)b3s->inst->synth,FALSE);
        }
 
        set=LV2toData(29,*b3s->vibratolower);
        if(set==true)
        {
          if(_data[29]==1)
-           setVibratoLower((struct b_tonegen *)b3s->inst,TRUE);
+           setVibratoLower((struct b_tonegen *)b3s->inst->synth,TRUE);
          else
-           setVibratoLower((struct b_tonegen *)b3s->inst,FALSE);
+           setVibratoLower((struct b_tonegen *)b3s->inst->synth,FALSE);
        }
 
        // Perc
@@ -629,7 +629,7 @@ void allocSynth(struct b_instance *inst) {
 
   initControllerTable (inst->midicfg);
 #if 1
-  midiPrimeControllerMapping (inst->midicfg);
+  //midiPrimeControllerMapping (inst->midicfg);
 #endif
 
 }
