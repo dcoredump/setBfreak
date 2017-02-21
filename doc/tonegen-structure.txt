@@ -1,0 +1,12 @@
+typedef struct b_instance {
+        struct b_reverb *reverb;
+        struct b_whirl *whirl;
+        struct b_tonegen *synth;
+                struct _oscillator;
+                struct b_vibrato
+        struct b_programme *progs;
+        void * midicfg;
+        void * preamp;
+        void * state;
+} b_instance;
+

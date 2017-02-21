@@ -264,6 +264,30 @@ void initSynth(struct b_instance *inst, double rate) {
   }
   listCCAssignments(inst->midicfg, stderr);
 #endif
+
+  char lv2path[256];
+  char hw_config[256];
+  char *p;
+
+  strncpy(lv2path,getenv("LV2_PATH"),255);
+  p=strtok(lv2path,":");
+  while(p!=NULL)
+  {
+    snprintf(hw_config,255,"%s/b_synth/hardware/default.cfg",p);
+    if(access(hw_config,R_OK)==0)
+    {
+      int r=parseConfigurationFile(inst,hw_config);
+      if(r!=0)
+        fprintf(stderr,"Cannot load initial hardware configuration: %s\n",hw_config);
+      else
+        break;
+    }
+    else
+    {
+      fprintf(stderr,"Trying hardware configuration: %s\n",hw_config);
+      p=strtok(NULL,":");
+    }
+  }
 }
 
 static void

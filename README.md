@@ -1,3 +1,9 @@
+NOTICE
+======
+This is a fork of the famous setBfree-organ-simulation! This software should be
+used as native LV2-plugin inside MOD-UI. Every external MIDI-support is
+currently dropped or will be dropped in future releases.
+
 setBfree
 ========
 
