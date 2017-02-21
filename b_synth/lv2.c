@@ -274,6 +274,9 @@ void initSynth(struct b_instance *inst, double rate) {
   while(p!=NULL)
   {
     snprintf(hw_config,255,"%s/b_synth/hardware/default.cfg",p);
+#ifdef DEBUGPRINT
+    fprintf(stderr,"Trying hardware configuration: %s\n",hw_config);
+#endif
     if(access(hw_config,R_OK)==0)
     {
       int r=parseConfigurationFile(inst,hw_config);
@@ -283,10 +286,7 @@ void initSynth(struct b_instance *inst, double rate) {
         break;
     }
     else
-    {
-      fprintf(stderr,"Trying hardware configuration: %s\n",hw_config);
       p=strtok(NULL,":");
-    }
   }
 }
 
