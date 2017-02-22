@@ -1,0 +1,26 @@
+@prefix modgui: <http://moddevices.com/ns/modgui#> .
+@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
+
+<http://gareus.org/oss/lv2/b_whirl#extended>
+    modgui:gui [
+        modgui:resourcesDirectory <modgui> ;
+        modgui:iconTemplate <modgui/icon-setbfree-whirl-speaker-extended-version.html> ;
+        modgui:stylesheet <modgui/stylesheet-setbfree-whirl-speaker-extended-version.css> ;
+        modgui:screenshot <modgui/screenshot-setbfree-whirl-speaker-extended-version.png> ;
+        modgui:thumbnail <modgui/thumbnail-setbfree-whirl-speaker-extended-version.png> ;
+        modgui:brand "Robin Gareus" ;
+        modgui:label "setBfree Whirl Speaker" ;
+        modgui:model "boxy" ;
+        modgui:panel "2-knobs" ;
+        modgui:color "wood2" ;
+        modgui:knob "steel" ;
+        modgui:port [
+            lv2:index 0 ;
+            lv2:symbol "motor" ;
+            lv2:name "Motor on/off" ;
+        ] , [
+            lv2:index 1 ;
+            lv2:symbol "speed_toggle" ;
+            lv2:name "slow/fast" ;
+        ] ;
+    ] .

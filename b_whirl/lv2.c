@@ -307,6 +307,7 @@ connect_port (LV2_Handle instance,
 		case B3W_MICANGLE:    b3w->mic_angle = (float*)data; break;
 		default: break;
 	}
+	b3w->rev_select=b3w->rev_select_slow;
 }
 
 static inline float db_to_coefficient (const float d) {
@@ -551,7 +552,7 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 			b3w->rev_select=b3w->rev_select_slow;
 		else
 			b3w->rev_select=b3w->rev_select_fast;
-		b3w->o_motor_toggle=*b3w->motor;
+		b3w->o_motor_toggle=*b3w->motor_toggle;
 	}
 
 	if (b3w->o_rev_select != *b3w->rev_select) {
