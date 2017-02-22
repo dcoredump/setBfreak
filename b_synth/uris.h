@@ -26,7 +26,8 @@
 #include "lv2/lv2plug.in/ns/ext/patch/patch.h"
 #include "lv2/lv2plug.in/ns/ext/midi/midi.h"
 
-#define SB3_URI "http://gareus.org/oss/lv2/b_synth"
+//#define SB3_URI "http://gareus.org/oss/lv2/b_synth"
+#define SB3_URI "https://github.com/dcoredump/setBfreak/b_synth"
 
 // fix for -fvisibility=hidden
 #undef LV2_SYMBOL_EXPORT

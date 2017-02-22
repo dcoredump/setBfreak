@@ -9,19 +9,19 @@
 @prefix urid:  <http://lv2plug.in/ns/ext/urid#> .
 @prefix state: <http://lv2plug.in/ns/ext/state#> .
 @prefix work:  <http://lv2plug.in/ns/ext/worker#> .
-@prefix sb3:   <http://gareus.org/oss/lv2/b_synth#> .
+@prefix sb3:   <https://github.com/dcoredump/setBfreak/b_synth#> .
 @prefix rsz:   <http://lv2plug.in/ns/ext/resize-port#> .
 
-<http://gareus.org/rgareus#me>
-	a foaf:Person ;
-	foaf:name "Robin Gareus" ;
-	foaf:mbox <mailto:robin@gareus.org> ;
-	foaf:homepage <http://gareus.org/> .
+<https://github.com/dcoredump/setBfreak#me>
+        a foaf:Person ;
+        foaf:name "dcoredump" ;
+        foaf:homepage <https://github.com/dcoredump/setBfreak/tree/native-lv2> ;
+        foaf:mbox <mailto:dcoredump@googlemail.com> .
 
-<http://gareus.org/oss/lv2/b_synth>
+<https://github.com/dcoredump/setBfreak/b_synth>
 	a lv2:Plugin, lv2:InstrumentPlugin, doap:Project;
-	doap:maintainer <http://gareus.org/rgareus#me> ;
-	doap:name "setBfree DSP Tonewheel Organ";
+	doap:maintainer <https://github.com/dcoredump/setBfreak#me> ;
+	doap:name "setBfreak Tonewheel Organ";
 	doap:license <http://usefulinc.com/doap/licenses/gpl> ;
 	lv2:microVersion 95 ;lv2:minorVersion 2049 ;
 	lv2:optionalFeature lv2:hardRTCapable ;

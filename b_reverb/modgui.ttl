@@ -1,15 +1,15 @@
 @prefix modgui: <http://moddevices.com/ns/modgui#> .
 @prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
 
-<http://gareus.org/oss/lv2/b_reverb>
+<https://github.com/dcoredump/setBfreak/b_reverb>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
         modgui:iconTemplate <modgui/icon-setbfree-organ-reverb.html> ;
         modgui:stylesheet <modgui/stylesheet-setbfree-organ-reverb.css> ;
         modgui:screenshot <modgui/screenshot-setbfree-organ-reverb.png> ;
         modgui:thumbnail <modgui/thumbnail-setbfree-organ-reverb.png> ;
-        modgui:brand "Robin Gareus" ;
-        modgui:label "setBfree Organ Reverb" ;
+        modgui:brand "dcoredump" ;
+        modgui:label "setBfreak Organ Reverb" ;
         modgui:model "boxy" ;
         modgui:panel "2-knobs" ;
         modgui:color "wood0" ;

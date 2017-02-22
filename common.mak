@@ -105,7 +105,7 @@ ifeq ($(ENABLE_CONVOLUTION), yes)
 endif
 
 ifneq ($(MOD),)
-	MODBRAND=mod:brand \"x42\";
+	MODBRAND=mod:brand \"dcoredump\";
 	MODLABEL=mod:label \"$(MODNAME)\";
 else
 	MODBRAND=

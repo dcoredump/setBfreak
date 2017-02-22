@@ -1,15 +1,15 @@
 @prefix modgui: <http://moddevices.com/ns/modgui#> .
 @prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
 
-<http://gareus.org/oss/lv2/b_overdrive>
+<https://github.com/dcoredump/setBfreak/b_overdrive>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
         modgui:iconTemplate <modgui/icon-setbfree-organ-overdrive.html> ;
         modgui:stylesheet <modgui/stylesheet-setbfree-organ-overdrive.css> ;
         modgui:screenshot <modgui/screenshot-setbfree-organ-overdrive.png> ;
         modgui:thumbnail <modgui/thumbnail-setbfree-organ-overdrive.png> ;
-        modgui:brand "Robin Gareus" ;
-        modgui:label "setBfree Organ Organ" ;
+        modgui:brand "dcoredump" ;
+        modgui:label "setBfreak Organ Overdrive" ;
         modgui:model "boxy" ;
         modgui:panel "3-knobs" ;
         modgui:color "wood1" ;

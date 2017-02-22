@@ -8,16 +8,16 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<http://gareus.org/rgareus#me>
-	a foaf:Person ;
-	foaf:name "Robin Gareus" ;
-	foaf:mbox <mailto:robin@gareus.org> ;
-	foaf:homepage <http://gareus.org/> .
+<https://github.com/dcoredump/setBfreak#me>
+        a foaf:Person ;
+        foaf:name "dcoredump" ;
+        foaf:homepage <https://github.com/dcoredump/setBfreak/tree/native-lv2> ;
+        foaf:mbox <mailto:dcoredump@googlemail.com> .
 
-<http://gareus.org/oss/lv2/b_whirl#simple>
+<https://github.com/dcoredump/setBfreak/b_whirl#simple>
 	a  doap:Project, lv2:Plugin, lv2:SimulatorPlugin;
-	doap:maintainer <http://gareus.org/rgareus#me> ;
-	doap:name "setBfree Whirl Speaker";
+	doap:maintainer <https://github.com/dcoredump/setBfreak#me> ;
+	doap:name "setBfreak Whirl Speaker";
 	doap:license <http://usefulinc.com/doap/licenses/gpl> ;
 	@VERSION@
 	lv2:optionalFeature lv2:hardRTCapable ;
