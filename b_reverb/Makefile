@@ -35,7 +35,7 @@ install: $(targets)
 ifeq ($(LV2AVAIL), yes)
 	install -d $(DESTDIR)$(lv2dir)/$(LV2NAME)
 	install -m755 $(LV2NAME)$(LIB_EXT) $(DESTDIR)$(lv2dir)/$(LV2NAME)
-	install -m644 manifest.ttl $(LV2NAME).ttl $(DESTDIR)$(lv2dir)/$(LV2NAME)
+	install -m644 manifest.ttl $(LV2NAME).ttl modgui.ttl $(DESTDIR)$(lv2dir)/$(LV2NAME)
 	cp -R modgui $(DESTDIR)$(lv2dir)/$(LV2NAME)
 endif
 

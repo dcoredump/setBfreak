@@ -39,55 +39,57 @@ typedef enum {
 	B3W_OUTR,
 
         B3W_MOTOR, // 3
+        B3W_MOTOR_TOGGLE,
 
-	B3W_REVSELECT, // 4
+	B3W_REVSELECT_SLOW, // 5
+	B3W_REVSELECT_FAST,
 
 	B3W_HORNLVL,
 	B3W_DRUMLVL,
 	B3W_DRUMWIDTH,
 
-	B3W_HORNRPMSLOW, // 8
+	B3W_HORNRPMSLOW, // 10
 	B3W_HORNRPMFAST,
 	B3W_HORNACCEL,
 	B3W_HORNDECEL,
 	B3W_HORNBRAKE,
 
-	B3W_FILTATYPE, // 13
+	B3W_FILTATYPE, // 15
 	B3W_FILTAFREQ,
 	B3W_FILTAQUAL,
 	B3W_FILTAGAIN,
 
-	B3W_FILTBTYPE, // 17
+	B3W_FILTBTYPE, // 19
 	B3W_FILTBFREQ,
 	B3W_FILTBQUAL,
 	B3W_FILTBGAIN,
 
-	B3W_DRUMRPMSLOW, // 21
+	B3W_DRUMRPMSLOW, // 22
 	B3W_DRUMRPMFAST,
 	B3W_DRUMACCEL,
 	B3W_DRUMDECEL,
 	B3W_DRUMBRAKE,
 
-	B3W_FILTDTYPE, // 26
+	B3W_FILTDTYPE, // 28
 	B3W_FILTDFREQ,
 	B3W_FILTDQUAL,
 	B3W_FILTDGAIN,
 
-	B3W_HORNLEAK, // 30 
+	B3W_HORNLEAK, // 32 
 	B3W_HORNRADIUS,
 	B3W_DRUMRADIUS,
 	B3W_HORNOFFX,
 	B3W_HORNOFFZ,
 	B3W_MICDIST,
 
-	B3W_HORNRPM, // 36
+	B3W_HORNRPM, // 38
 	B3W_DRUMRPM,
 
 	B3W_HORNANG,
 	B3W_DRUMANG,
 
 	B3W_GUINOTIFY,
-	B3W_LINKSPEED, // 41
+	B3W_LINKSPEED, // 43
 	B3W_MICANGLE,
 	B3W_HORNWIDTH,
 } PortIndex;
@@ -106,8 +108,11 @@ typedef struct {
 
 	/* control ports */
 	float *motor; // motor on/off
+	float *motor_toggle; // toggle slow/fast
 
-	float *rev_select; // speed select 0..8
+	float *rev_select_slow; // speed select 0..8
+	float *rev_select_fast; // speed select 0..8
+	float *rev_select;
 
 	float *horn_brake, *horn_accel, *horn_decel, *horn_slow, *horn_fast;
 	float *drum_brake, *drum_accel, *drum_decel, *drum_slow, *drum_fast;
@@ -130,6 +135,7 @@ typedef struct {
 
 	/* internal state */
 	float o_motor;
+	float o_motor_toggle;
 	float o_rev_select;
 	float o_horn_brake, o_horn_accel, o_horn_decel, o_horn_slow, o_horn_fast;
 	float o_drum_brake, o_drum_accel, o_drum_decel, o_drum_slow, o_drum_fast;
@@ -247,8 +253,10 @@ connect_port (LV2_Handle instance,
 		case B3W_OUTR:        b3w->outR = (float*)data; break;
 
 		case B3W_MOTOR:       b3w->motor = (float*)data; break;
+		case B3W_MOTOR_TOGGLE: b3w->motor_toggle = (float*)data; break;
 
-		case B3W_REVSELECT:   b3w->rev_select = (float*)data; break;
+		case B3W_REVSELECT_SLOW:   b3w->rev_select_slow = (float*)data; break;
+		case B3W_REVSELECT_FAST:   b3w->rev_select_fast = (float*)data; break;
 
 		case B3W_FILTATYPE:   b3w->flt[0].type = (float*)data; break;
 		case B3W_FILTAFREQ:   b3w->flt[0].freq = (float*)data; break;
@@ -533,8 +541,17 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 
 	if(b3w->o_motor!=*b3w->motor)
 	{
-		b3w->o_motor=*b3w->motor;
 		setRevSelect(b3w->whirl,(*b3w->motor==0.0?1:2));
+		b3w->o_motor=*b3w->motor;
+	}
+
+	if(b3w->o_motor_toggle!=*b3w->motor_toggle)
+	{
+		if(*b3w->motor_toggle==0)
+			b3w->rev_select=b3w->rev_select_slow;
+		else
+			b3w->rev_select=b3w->rev_select_fast;
+		b3w->o_motor_toggle=*b3w->motor;
 	}
 
 	if (b3w->o_rev_select != *b3w->rev_select) {

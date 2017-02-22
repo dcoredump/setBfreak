@@ -1,5 +1,5 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
 @prefix modgui: <http://moddevices.com/ns/modgui#> .
-@prefix lv2:    <http://lv2plug.in/ns/lv2core#> .
 
 <http://gareus.org/oss/lv2/b_reverb>
     modgui:gui [

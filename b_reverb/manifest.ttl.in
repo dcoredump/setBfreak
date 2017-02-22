@@ -5,28 +5,5 @@
 <http://gareus.org/oss/lv2/b_reverb>
 	a lv2:Plugin ;
 	lv2:binary <b_reverb@LIB_EXT@>  ;
-	rdfs:seeAlso <b_reverb.ttl> .
-
-    modgui:gui [
-        modgui:resourcesDirectory <modgui> ;
-        modgui:iconTemplate <modgui/icon-setbfree-organ-reverb.html> ;
-        modgui:stylesheet <modgui/stylesheet-setbfree-organ-reverb.css> ;
-        modgui:screenshot <modgui/screenshot-setbfree-organ-reverb.png> ;
-        modgui:thumbnail <modgui/thumbnail-setbfree-organ-reverb.png> ;
-        modgui:brand "Robin Gare" ;
-        modgui:label "setBfree Organ Reverb" ;
-        modgui:model "boxy" ;
-        modgui:panel "2-knobs" ;
-        modgui:color "wood0" ;
-        modgui:knob "steel" ;
-        modgui:port [
-            lv2:index 0 ;
-            lv2:symbol "mix" ;
-            lv2:name "Dry/Wet" ;
-        ] , [
-            lv2:index 1 ;
-            lv2:symbol "gain_in" ;
-            lv2:name "Input Gain" ;
-        ] ;
-    ] .
-
+	rdfs:seeAlso <b_reverb.ttl> ;
+        rdfs:seeAlso <modgui.ttl> .
