@@ -4,10 +4,10 @@
 <https://github.com/dcoredump/setBfreak/b_reverb>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
-        modgui:iconTemplate <modgui/icon-setbfree-organ-reverb.html> ;
-        modgui:stylesheet <modgui/stylesheet-setbfree-organ-reverb.css> ;
-        modgui:screenshot <modgui/screenshot-setbfree-organ-reverb.png> ;
-        modgui:thumbnail <modgui/thumbnail-setbfree-organ-reverb.png> ;
+        modgui:iconTemplate <modgui/icon-setbfreak-organ-reverb.html> ;
+        modgui:stylesheet <modgui/stylesheet-setbfreak-organ-reverb.css> ;
+        modgui:screenshot <modgui/screenshot-setbfreak-organ-reverb.png> ;
+        modgui:thumbnail <modgui/thumbnail-setbfreak-organ-reverb.png> ;
         modgui:brand "dcoredump" ;
         modgui:label "setBfreak Organ Reverb" ;
         modgui:model "boxy" ;

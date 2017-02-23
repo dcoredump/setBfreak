@@ -108,7 +108,7 @@ typedef struct {
 
 	/* control ports */
 	float *motor; // motor on/off
-	float *motor_toggle; // toggle slow/fast
+	float *speed_toggle; // toggle slow/fast
 
 	float *rev_select_slow; // speed select 0..8
 	float *rev_select_fast; // speed select 0..8
@@ -135,7 +135,7 @@ typedef struct {
 
 	/* internal state */
 	float o_motor;
-	float o_motor_toggle;
+	float o_speed_toggle;
 	float o_rev_select;
 	float o_horn_brake, o_horn_accel, o_horn_decel, o_horn_slow, o_horn_fast;
 	float o_drum_brake, o_drum_accel, o_drum_decel, o_drum_slow, o_drum_fast;
@@ -253,7 +253,7 @@ connect_port (LV2_Handle instance,
 		case B3W_OUTR:        b3w->outR = (float*)data; break;
 
 		case B3W_MOTOR:       b3w->motor = (float*)data; break;
-		case B3W_MOTOR_TOGGLE: b3w->motor_toggle = (float*)data; break;
+		case B3W_MOTOR_TOGGLE: b3w->speed_toggle = (float*)data; break;
 
 		case B3W_REVSELECT_SLOW:   b3w->rev_select_slow = (float*)data; break;
 		case B3W_REVSELECT_FAST:   b3w->rev_select_fast = (float*)data; break;
@@ -546,13 +546,13 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 		b3w->o_motor=*b3w->motor;
 	}
 
-	if(b3w->o_motor_toggle!=*b3w->motor_toggle)
+	if(b3w->o_speed_toggle!=*b3w->speed_toggle)
 	{
-		if(*b3w->motor_toggle==0)
+		if(*b3w->speed_toggle==0)
 			b3w->rev_select=b3w->rev_select_slow;
 		else
 			b3w->rev_select=b3w->rev_select_fast;
-		b3w->o_motor_toggle=*b3w->motor_toggle;
+		b3w->o_speed_toggle=*b3w->speed_toggle;
 	}
 
 	if (b3w->o_rev_select != *b3w->rev_select) {

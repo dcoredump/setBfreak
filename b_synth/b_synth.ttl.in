@@ -356,7 +356,7 @@
                 a lv2:InputPort, lv2:ControlPort ;
                 lv2:index 30 ;
                 lv2:symbol "vibratoupper" ;
-                lv2:name "Vibrator Upper";
+                lv2:name "Vibrato Upper";
                 lv2:default 0 ;
                 lv2:minimum 0 ;
                 lv2:maximum 1 ;
@@ -366,7 +366,7 @@
                 a lv2:InputPort, lv2:ControlPort ;
                 lv2:index 31 ;
                 lv2:symbol "vibratolower" ;
-                lv2:name "Vibrator Lower";
+                lv2:name "Vibrato Lower";
                 lv2:default 0 ;
                 lv2:minimum 0 ;
                 lv2:maximum 1 ;
@@ -529,7 +529,7 @@
                 lv2:maximum 127 ;
                 lv2:portProperty lv2:integer ;
         ] ;
-	mod:brand "x42" ;
-	mod:label "setBfree" ;
-	rdfs:comment "setBfree is a MIDI-controlled, software synthesizer designed to imitate the sound and properties of the electromechanical organs and sound modification devices that brought world-wide fame to the names and products of Laurens Hammond and Don Leslie."
+	mod:brand "dcoredump" ;
+	mod:label "setBfreak Tonewheel Organ" ;
+	rdfs:comment "setBfreak is a MIDI-controlled, software synthesizer heavily based on setBfree designed to imitate the sound and properties of the electromechanical organs and sound modification devices that brought world-wide fame to the names and products of Laurens Hammond and Don Leslie."
 	.

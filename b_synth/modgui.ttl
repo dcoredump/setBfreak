@@ -4,43 +4,19 @@
 <https://github.com/dcoredump/setBfreak/b_synth>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
-        modgui:iconTemplate <modgui/icon-setbfree-dsp-tonewheel-organ.html> ;
-        modgui:stylesheet <modgui/stylesheet-setbfree-dsp-tonewheel-organ.css> ;
-        modgui:screenshot <modgui/screenshot-setbfree-dsp-tonewheel-organ.png> ;
-        modgui:thumbnail <modgui/thumbnail-setbfree-dsp-tonewheel-organ.png> ;
+        modgui:iconTemplate <modgui/icon-setbfreak-tonewheel-organ.html> ;
+        modgui:stylesheet <modgui/stylesheet-setbfreak-tonewheel-organ.css> ;
+        modgui:screenshot <modgui/screenshot-setbfreak-tonewheel-organ.png> ;
+        modgui:thumbnail <modgui/thumbnail-setbfreak-tonewheel-organ.png> ;
         modgui:brand "dcoredump" ;
-        modgui:label "setBfreak Organ" ;
-        modgui:model "boxy75" ;
-        modgui:panel "7-knobs" ;
+        modgui:label "setBfreak" ;
+        modgui:model "boxy" ;
+        modgui:panel "1-knob" ;
         modgui:color "wood3" ;
         modgui:knob "steel" ;
         modgui:port [
             lv2:index 0 ;
-            lv2:symbol "perc" ;
-            lv2:name "Percussion" ;
-        ] , [
-            lv2:index 1 ;
-            lv2:symbol "percvol" ;
-            lv2:name "Percussion Volume" ;
-        ] , [
-            lv2:index 2 ;
-            lv2:symbol "percspeed" ;
-            lv2:name "Percussion Speed" ;
-        ] , [
-            lv2:index 3 ;
-            lv2:symbol "percharm" ;
-            lv2:name "Percussion Harm" ;
-        ] , [
-            lv2:index 4 ;
-            lv2:symbol "vibrato" ;
-            lv2:name "Vibrato" ;
-        ] , [
-            lv2:index 5 ;
-            lv2:symbol "vibratoupper" ;
-            lv2:name "Vibrator Upper" ;
-        ] , [
-            lv2:index 6 ;
-            lv2:symbol "vibratolower" ;
-            lv2:name "Vibrator Lower" ;
+            lv2:symbol "transpose" ;
+            lv2:name "Transpose" ;
         ] ;
     ] .

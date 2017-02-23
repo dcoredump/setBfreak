@@ -4,10 +4,10 @@
 <https://github.com/dcoredump/setBfreak/b_overdrive>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
-        modgui:iconTemplate <modgui/icon-setbfree-organ-overdrive.html> ;
-        modgui:stylesheet <modgui/stylesheet-setbfree-organ-overdrive.css> ;
-        modgui:screenshot <modgui/screenshot-setbfree-organ-overdrive.png> ;
-        modgui:thumbnail <modgui/thumbnail-setbfree-organ-overdrive.png> ;
+        modgui:iconTemplate <modgui/icon-setbfreak-organ-overdrive.html> ;
+        modgui:stylesheet <modgui/stylesheet-setbfreak-organ-overdrive.css> ;
+        modgui:screenshot <modgui/screenshot-setbfreak-organ-overdrive.png> ;
+        modgui:thumbnail <modgui/thumbnail-setbfreak-organ-overdrive.png> ;
         modgui:brand "dcoredump" ;
         modgui:label "setBfreak Organ Overdrive" ;
         modgui:model "boxy" ;
