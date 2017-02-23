@@ -549,14 +549,14 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 	if(b3w->o_speed_toggle!=*b3w->speed_toggle)
 	{
 		if(*b3w->speed_toggle==0)
-			b3w->rev_select=b3w->rev_select_slow;
+			*b3w->rev_select=*b3w->rev_select_slow;
 		else
-			b3w->rev_select=b3w->rev_select_fast;
+			*b3w->rev_select=*b3w->rev_select_fast;
 		b3w->o_speed_toggle=*b3w->speed_toggle;
 	}
 
 	if (b3w->o_rev_select != *b3w->rev_select) {
-		const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0;
+		const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0.0;
 		const int v = (int) floorf (*b3w->rev_select);
 		int h = v / 3; // 0: stop, 1: slow, 2: fast
 		int d = v % 3; // 0: stop, 1: slow, 2: fast
