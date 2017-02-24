@@ -237,6 +237,9 @@ instantiate (const LV2_Descriptor*     descriptor,
 	b3w->x_hll = b3w->x_hrr = 1.0;
 	b3w->x_hlr = b3w->x_hrl = 0.0;
 
+	b3w->o_speed_toggle=-1.0;
+	b3w->o_motor=-1.0;
+
 	return (LV2_Handle)b3w;
 }
 
@@ -255,8 +258,12 @@ connect_port (LV2_Handle instance,
 		case B3W_MOTOR:       b3w->motor = (float*)data; break;
 		case B3W_MOTOR_TOGGLE: b3w->speed_toggle = (float*)data; break;
 
-		case B3W_REVSELECT_SLOW:   b3w->rev_select_slow = (float*)data; break;
-		case B3W_REVSELECT_FAST:   b3w->rev_select_fast = (float*)data; break;
+		case B3W_REVSELECT_SLOW:
+			b3w->rev_select = (float*)data;
+			break;
+		case B3W_REVSELECT_FAST:
+			b3w->rev_select = (float*)data;
+			break;
 
 		case B3W_FILTATYPE:   b3w->flt[0].type = (float*)data; break;
 		case B3W_FILTAFREQ:   b3w->flt[0].freq = (float*)data; break;
@@ -307,7 +314,6 @@ connect_port (LV2_Handle instance,
 		case B3W_MICANGLE:    b3w->mic_angle = (float*)data; break;
 		default: break;
 	}
-	b3w->rev_select=b3w->rev_select_slow;
 }
 
 static inline float db_to_coefficient (const float d) {
@@ -540,20 +546,24 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 	SETVALUE(drumAcc, drum_accel, , );
 	SETVALUE(drumDec, drum_decel, , );
 
-	if(b3w->o_motor!=*b3w->motor)
+	if(b3w->o_motor!=*b3w->motor||b3w->o_speed_toggle!=*b3w->speed_toggle)
 	{
-		setRevSelect(b3w->whirl,(*b3w->motor==0.0?1:2));
-		b3w->o_motor=*b3w->motor;
-	}
+		if(*b3w->motor==0.0)
+		{
+			setRevSelect(b3w->whirl,0);
+		}
+		else if(*b3w->motor==1.0 && *b3w->speed_toggle==0.0)
+		{
+			setRevSelect(b3w->whirl,1);
+		}
+		else if(*b3w->motor==1.0 && *b3w->speed_toggle==1.0)
+		{
+			setRevSelect(b3w->whirl,2);
+		}
 
-	if(b3w->o_speed_toggle!=*b3w->speed_toggle)
-	{
-		if(*b3w->speed_toggle==0)
-			*b3w->rev_select=*b3w->rev_select_slow;
-		else
-			*b3w->rev_select=*b3w->rev_select_fast;
+		b3w->o_motor=*b3w->motor;
 		b3w->o_speed_toggle=*b3w->speed_toggle;
-	}
+	} 
 
 	if (b3w->o_rev_select != *b3w->rev_select) {
 		const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0.0;
