@@ -258,8 +258,8 @@ connect_port (LV2_Handle instance,
 		case B3W_MOTOR:       b3w->motor = (float*)data; break;
 		case B3W_MOTOR_TOGGLE: b3w->speed_toggle = (float*)data; break;
 
-		case B3W_REVSELECT_SLOW: b3w->rev_select=(float*)data; break;
-		case B3W_REVSELECT_FAST: b3w->rev_select=(float*)data; break;
+		case B3W_REVSELECT_SLOW: b3w->rev_select_slow=(float*)data; break;
+		case B3W_REVSELECT_FAST: b3w->rev_select_fast=(float*)data; break;
 
 		case B3W_FILTATYPE:   b3w->flt[0].type = (float*)data; break;
 		case B3W_FILTAFREQ:   b3w->flt[0].freq = (float*)data; break;
@@ -546,14 +546,17 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 	{
 		if(*b3w->motor==0.0)
 		{
+			b3w->rev_select=b3w->rev_select_slow;
 			setRevSelect(b3w->whirl,0);
 		}
 		else if(*b3w->motor==1.0 && *b3w->speed_toggle==0.0)
 		{
+			b3w->rev_select=b3w->rev_select_slow;
 			setRevSelect(b3w->whirl,1);
 		}
 		else if(*b3w->motor==1.0 && *b3w->speed_toggle==1.0)
 		{
+			b3w->rev_select=b3w->rev_select_fast;
 			setRevSelect(b3w->whirl,2);
 		}
 
@@ -561,18 +564,15 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 		b3w->o_speed_toggle=*b3w->speed_toggle;
 	} 
 
-	if(b3w->rev_select!=NULL)
-	{
-		if (b3w->o_rev_select != *b3w->rev_select) {
-			const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0.0;
-			const int v = (int) floorf (*b3w->rev_select);
-			int h = v / 3; // 0: stop, 1: slow, 2: fast
-			int d = v % 3; // 0: stop, 1: slow, 2: fast
-			if (l <= -.5) { h = d; }
-			if (l >= 0.5) { d = h; }
-			useRevOption (b3w->whirl,h * 3 + d);
-			b3w->o_rev_select = *b3w->rev_select;
-		}
+	if (b3w->o_rev_select != *b3w->rev_select) {
+		const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0.0;
+		const int v = (int) floorf (*b3w->rev_select);
+		int h = v / 3; // 0: stop, 1: slow, 2: fast
+		int d = v % 3; // 0: stop, 1: slow, 2: fast
+		if (l <= -.5) { h = d; }
+		if (l >= 0.5) { d = h; }
+		useRevOption (b3w->whirl,h * 3 + d);
+		b3w->o_rev_select = *b3w->rev_select;
 	}
 
 	float* input = b3w->input;
