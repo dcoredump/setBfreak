@@ -33,6 +33,8 @@
 #define B3W_URI "https://github.com/dcoredump/setBfreak/b_whirl#simple"
 #define B3W_URI_EXT "https://github.com/dcoredump/setBfreak/b_whirl#extended"
 
+float* null_dot_null=NULL;
+
 typedef enum {
 	B3W_INPUT = 0,
 	B3W_OUTL,
@@ -310,6 +312,18 @@ connect_port (LV2_Handle instance,
 		case B3W_MICANGLE:    b3w->mic_angle = (float*)data; break;
 		default: break;
 	}
+
+	// Uuuuuaaahhhh! What a bad hack!
+	if(null_dot_null==NULL)
+	{
+		if((null_dot_null=calloc(1,sizeof(float)))==NULL)
+			exit(0);
+		else
+		{
+			b3w->rev_select=null_dot_null;
+			setRevSelect(b3w->whirl,0);
+		}
+	}
 }
 
 static inline float db_to_coefficient (const float d) {
@@ -529,24 +543,11 @@ static void process (B3W* b3w, uint32_t n_samples, float const * const in, float
 static void run (LV2_Handle instance, uint32_t n_samples) {
 	B3W* b3w = (B3W*)instance;
 
-	SETVALUE(hnBrakePos, horn_brake, (double), );
-	SETVALUE(hornAcc, horn_accel, , );
-	SETVALUE(hornDec, horn_decel, , );
-
-	SETVALUE(hornRPMslow, horn_slow, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
-	SETVALUE(hornRPMfast, horn_fast, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
-	SETVALUE(drumRPMslow, drum_slow, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
-	SETVALUE(drumRPMfast, drum_fast, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
-
-	SETVALUE(drBrakePos, drum_brake, (double), );
-	SETVALUE(drumAcc, drum_accel, , );
-	SETVALUE(drumDec, drum_decel, , );
-
 	if(b3w->o_motor!=*b3w->motor||b3w->o_speed_toggle!=*b3w->speed_toggle)
 	{
 		if(*b3w->motor==0.0)
 		{
-			b3w->rev_select=b3w->rev_select_slow;
+			b3w->rev_select=null_dot_null;
 			setRevSelect(b3w->whirl,0);
 		}
 		else if(*b3w->motor==1.0 && *b3w->speed_toggle==0.0)
@@ -563,6 +564,19 @@ static void run (LV2_Handle instance, uint32_t n_samples) {
 		b3w->o_motor=*b3w->motor;
 		b3w->o_speed_toggle=*b3w->speed_toggle;
 	} 
+
+	SETVALUE(hnBrakePos, horn_brake, (double), );
+	SETVALUE(hornAcc, horn_accel, , );
+	SETVALUE(hornDec, horn_decel, , );
+
+	SETVALUE(hornRPMslow, horn_slow, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
+	SETVALUE(hornRPMfast, horn_fast, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
+	SETVALUE(drumRPMslow, drum_slow, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
+	SETVALUE(drumRPMfast, drum_fast, , computeRotationSpeeds (b3w->whirl); b3w->o_rev_select = -1;);
+
+	SETVALUE(drBrakePos, drum_brake, (double), );
+	SETVALUE(drumAcc, drum_accel, , );
+	SETVALUE(drumDec, drum_decel, , );
 
 	if (b3w->o_rev_select != *b3w->rev_select) {
 		const float l = b3w->p_link_speed ? (*b3w->p_link_speed) : 0.0;
@@ -669,6 +683,8 @@ cleanup (LV2_Handle instance)
 {
 	B3W* b3w = (B3W*)instance;
 	freeWhirl (b3w->whirl);
+	if(null_dot_null!=NULL)
+		free(null_dot_null);
 	free (instance);
 }
 
