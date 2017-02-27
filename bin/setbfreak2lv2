@@ -69,9 +69,13 @@ while($CFG=shift(@ARGV))
 		{
 			if($l=~/\{\s*(.+)\s*\}/)
 			{
-				$l=$1;
-				$l=~s/\s+//g;
-				push(@cfg,$l);
+				$z=$1;
+				foreach $l (split(",",$z))
+				{
+					$l=~s/\s+//g if($l!~/name/);
+					push(@ll,$l);
+				}
+				push(@cfg,join(",",@ll));
 			}
 			$l="";
 		}
@@ -87,9 +91,8 @@ while($CFG=shift(@ARGV))
 			($i,$v)=split("=",$item);
 			if($i eq "name")
 			{
-				$v=~s/\'/_/g;
-				$v=~s/:/_/g;
-				$v=~s/:/_/g;
+				$v=~tr/[\"//;
+				$v=~tr/[ :%§&-*+\'`\!\$\%\?\/\<\>\[\]\^\{\}]\|/_/;
 			}
 			if($v!~/^\".+\"$/)
 			{
@@ -127,15 +130,6 @@ while($CFG=shift(@ARGV))
 
 		$voice=$config{'name'};
 		delete($config{'name'});
-		$voice=~tr/[ %§&-*+\"\'`\!\$\%\?\/\<\>\[\]\^\{\}]\|/_/;
-		$voice=~s/%3c/_/i;
-		$voice=~s/%3e/_/i;
-		$voice=~s/%5b/_/i;
-		$voice=~s/%5d/_/i;
-		$voice=~s/%5e/_/i;
-		$voice=~s/%7b/_/i;
-		$voice=~s/%7d/_/i;
-		$voice=~s/%7c/_/i;
 
 		if(defined($option{'voice_no'}) && defined($option{'bank'}))
 		{
@@ -206,7 +200,6 @@ sub write_preset_header
         print $setbfree_voice "\@prefix state: <http://lv2plug.in/ns/ext/state#> .\n";
         print $setbfree_voice "\@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n";
         print $setbfree_voice "\n";
-        #print $setbfree_voice "<".$LV2_URI."#".$voice.">\n";
         print $setbfree_voice "<>\n";
         print $setbfree_voice "        a pset:Preset ;\n";
         print $setbfree_voice "        lv2:appliesTo <".$LV2_URI."> ;\n";
@@ -228,10 +221,8 @@ l\': $!\n");
         print MANIFEST "\@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .\n";
 
         print MANIFEST "\n";
-        #print MANIFEST "<".$LV2_URI."#".$voice.">\n";
         print MANIFEST "<".$voice.".ttl>\n";
         print MANIFEST "        lv2:appliesTo <".$LV2_URI."> ;\n";
-        #print MANIFEST "        a pset:Bank $BANK ;\n";
         print MANIFEST "        a pset:Preset ;\n";
         print MANIFEST "        rdfs:label \"".$voice."\" ;\n";
         print MANIFEST "        rdfs:seeAlso <".$voice.".ttl> .\n";
@@ -251,22 +242,22 @@ sub print_lv2_port
 		$port_val=5 if($port_val eq "c2");
 		$port_val=6 if($port_val eq "c3");
 	}
-	if($port_name eq "vibratoupper"||$port_name eq "vibratoupper"||$port_name eq "perc")
+	elsif($port_name eq "vibratoupper"||$port_name eq "vibratoupper"||$port_name eq "perc")
 	{
 		$port_val=0 if($port_val eq "off");
 		$port_val=1 if($port_val eq "on");
 	}
-	if($port_name eq "percspeed"||$port_name eq "percvol")
+	elsif($port_name eq "percspeed"||$port_name eq "percvol")
 	{
 		$port_val=0 if($port_val=~/so/||$port_val=~/lo/||$port_val=~/sl/);
 		$port_val=1 if($port_val=~/no/||$port_val=~/hi/||$port_val=~/fa/);
 	}
-	if($port_name eq "percharm")
+	elsif($port_name eq "percharm")
 	{
 		$port_val=0 if($port_val=~/nd/||$port_val=~/lo/);
 		$port_val=1 if($port_val=~/rd/||$port_val=~/hi/);
 	}
-
+	
         print $setbfree_voice "                lv2:symbol \"".$port_name."\" ;\n";
         $port_val.=".0" if($port_val!~/\./);
         print $setbfree_voice "                pset:value ".$port_val." ;\n";
