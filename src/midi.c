@@ -799,7 +799,7 @@ static void loadStatusTable (struct b_midicfg * m) {
 /*
  * Auxillary function to midiPrimeControllerMapping below.
  */
-static void loadCCMap (struct b_midicfg * m,
+/* static void loadCCMap (struct b_midicfg * m,
 		       const char * cfname,
 		       int ccn,
 		       unsigned char * A,
@@ -822,7 +822,7 @@ static void loadCCMap (struct b_midicfg * m,
     C[x] = (unsigned char) ccn;
     reverse_cc_map(m, x, m->rcvChC, ccn);
   }
-}
+} */
 
 /*
  * Sets the initial state of the tables that map from a controllable function
@@ -833,89 +833,89 @@ static void loadCCMap (struct b_midicfg * m,
  * What we do is that we load the tables ctrlUseA, ctrlUseB and ctrlUseC
  */
 void midiPrimeControllerMapping (void *mcfg) {
-  struct b_midicfg * m = (struct b_midicfg *) mcfg;
+//  struct b_midicfg * m = (struct b_midicfg *) mcfg;
 
-  loadCCMap (m, "swellpedal1",  1, m->ctrlUseA, m->ctrlUseB, m->ctrlUseC);
-  loadCCMap (m, "swellpedal2", 11, m->ctrlUseA, m->ctrlUseB, m->ctrlUseC);
+//  loadCCMap (m, "swellpedal1",  1, m->ctrlUseA, m->ctrlUseB, m->ctrlUseC);
+//  loadCCMap (m, "swellpedal2", 11, m->ctrlUseA, m->ctrlUseB, m->ctrlUseC);
 
-  loadCCMap (m, "xov.ctl_biased",      3, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "xov.ctl_biased_fb",   9, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "xov.ctl_biased_fb2", 14, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "xov.ctl_biased_gfb", 15, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "xov.ctl_sagtobias",  20, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "xov.ctl_biased",      3, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "xov.ctl_biased_fb",   9, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "xov.ctl_biased_fb2", 14, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "xov.ctl_biased_gfb", 15, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "xov.ctl_sagtobias",  20, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "overdrive.inputgain",      21, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "overdrive.outputgain",     22, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "overdrive.inputgain",      21, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "overdrive.outputgain",     22, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "whirl.drum.filter.type", 23, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.drum.filter.hz",   24, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.drum.filter.q",    25, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.drum.filter.gain", 26, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.drum.filter.type", 23, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.drum.filter.hz",   24, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.drum.filter.q",    25, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.drum.filter.gain", 26, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "whirl.horn.filter.a.type", 27, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.filter.a.hz",   28, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.filter.a.q",    29, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.filter.a.gain", 30, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.a.type", 27, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.a.hz",   28, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.a.q",    29, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.a.gain", 30, m->ctrlUseA, NULL, NULL);
 
   /* 32-63 are least significant bits of controller 0-31 */
 
-  loadCCMap (m, "rotary.speed-toggle", 64, m->ctrlUseA, m->ctrlUseB, m->ctrlUseC);
+//  loadCCMap (m, "rotary.speed-toggle", 64, m->ctrlUseA, m->ctrlUseB, m->ctrlUseC);
 
-  loadCCMap (m, "upper.drawbar16",  70, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar513", 71, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar8",   72, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar4",   73, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar223", 74, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar2",   75, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar135", 76, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar113", 77, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "upper.drawbar1",   78, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar16",  70, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar513", 71, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar8",   72, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar4",   73, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar223", 74, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar2",   75, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar135", 76, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar113", 77, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "upper.drawbar1",   78, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "lower.drawbar16",  70, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar513", 71, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar8",   72, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar4",   73, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar223", 74, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar2",   75, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar135", 76, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar113", 77, NULL, m->ctrlUseB, NULL);
-  loadCCMap (m, "lower.drawbar1",   78, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar16",  70, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar513", 71, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar8",   72, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar4",   73, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar223", 74, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar2",   75, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar135", 76, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar113", 77, NULL, m->ctrlUseB, NULL);
+//  loadCCMap (m, "lower.drawbar1",   78, NULL, m->ctrlUseB, NULL);
 
-  loadCCMap (m, "pedal.drawbar16",  70, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar513", 71, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar8",   72, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar4",   73, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar223", 74, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar2",   75, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar135", 76, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar113", 77, NULL, NULL, m->ctrlUseC);
-  loadCCMap (m, "pedal.drawbar1",   78, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar16",  70, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar513", 71, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar8",   72, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar4",   73, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar223", 74, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar2",   75, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar135", 76, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar113", 77, NULL, NULL, m->ctrlUseC);
+//  loadCCMap (m, "pedal.drawbar1",   78, NULL, NULL, m->ctrlUseC);
 
-  loadCCMap (m, "percussion.enable",   80, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "percussion.decay",    81, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "percussion.harmonic", 82, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "percussion.enable",   80, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "percussion.decay",    81, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "percussion.harmonic", 82, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "vibrato.knob",    83, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "vibrato.routing", 92, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "vibrato.knob",    83, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "vibrato.routing", 92, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "whirl.horn.filter.b.type", 85, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.filter.b.hz",   86, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.filter.b.q",    87, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.filter.b.gain", 88, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.b.type", 85, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.b.hz",   86, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.b.q",    87, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.filter.b.gain", 88, m->ctrlUseA, NULL, NULL);
 
 #ifdef HORN_COMB_FILTER // disabled in b_whirl/whirl.c
-  loadCCMap (m, "whirl.horn.comb.a.feedback", 89, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.comb.a.delay",    90, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.comb.a.feedback", 89, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.comb.a.delay",    90, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "whirl.horn.comb.b.feedback", 102, m->ctrlUseA, NULL, NULL);
-  loadCCMap (m, "whirl.horn.comb.b.delay",    103, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.comb.b.feedback", 102, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "whirl.horn.comb.b.delay",    103, m->ctrlUseA, NULL, NULL);
 #endif
 
-  loadCCMap (m, "rotary.speed-preset",   91, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "rotary.speed-preset",   91, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "overdrive.character",   93, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "overdrive.character",   93, m->ctrlUseA, NULL, NULL);
 
-  loadCCMap (m, "convolution.mix", 94, m->ctrlUseA, NULL, NULL);
+//  loadCCMap (m, "convolution.mix", 94, m->ctrlUseA, NULL, NULL);
 }
 
 /*
