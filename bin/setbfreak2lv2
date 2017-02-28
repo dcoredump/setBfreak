@@ -44,9 +44,10 @@ while($option=shift(@CMD_OPTION))
         }
 }
 
+init_config_hash();
 while($CFG=shift(@ARGV))
 {
-        next if($CFG=~/^\s*$/);
+        next if($CFG=~/^\s*$/||$CFG=~/^-/);
 
         $BANK=$CFG;
         $BANK=~s{.*/}{};      # removes path  
@@ -65,33 +66,31 @@ while($CFG=shift(@ARGV))
                 next if($s=~/^\s*$/);
         	next if($s=~/^\s*#/);
 		$l=$l.$s;
-		if($s=~/\}/)
+		if($l=~/\{\s*(.+)\s*\}/)
 		{
-			if($l=~/\{\s*(.+)\s*\}/)
+			$z=$1;
+			foreach $l (split(",",$z))
 			{
-				$z=$1;
-				foreach $l (split(",",$z))
-				{
-					$l=~s/\s+//g if($l!~/name/);
-					push(@ll,$l);
-				}
-				push(@cfg,join(",",@ll));
+				$l=~s/\s+//g if($l!~/name/);
+				push(@ll,$l);
 			}
-			$l="";
+			push(@cfg,join(",",@ll));
 		}
+		undef($l);
+		undef(@ll);
 	}
 	close(CFG);
 
 	foreach $cfg (@cfg)
 	{
-		init_config_hash();
 		$voice_no++;
+		init_config_hash();
 		foreach $item (split(",",$cfg))
 		{
 			($i,$v)=split("=",$item);
 			if($i eq "name")
 			{
-				$v=~tr/[\"//;
+				$v=~s/"//g;
 				$v=~tr/[ :%§&-*+\'`\!\$\%\?\/\<\>\[\]\^\{\}]\|/_/;
 			}
 			if($v!~/^\".+\"$/)
@@ -124,13 +123,15 @@ while($CFG=shift(@ARGV))
 				delete($config{$i});
 				next;
 			}
-			eval("\$config{\'$i\'}=$v;");
+
+			if(defined($config{$i}))
+			{
+				eval("\$config{\'$i\'}=$v;");
+			}
 		}
-		next if($config{'name'}=~/^\s*$/);
 
 		$voice=$config{'name'};
-		delete($config{'name'});
-
+		#delete($config{'name'});
 		if(defined($option{'voice_no'}) && defined($option{'bank'}))
 		{
 			if($voice_no<10)
@@ -266,6 +267,7 @@ sub print_lv2_port
 sub init_config_hash
 {
 	undef(%config);
+	$config{'name'}="";
 	$config{'drawbar_pedal_1'}=0.0;
 	$config{'drawbar_pedal_2'}=0.0;
 	$config{'drawbar_pedal_3'}=0.0;
