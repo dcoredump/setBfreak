@@ -23,7 +23,8 @@
 	doap:maintainer <https://github.com/dcoredump/setBfreak#me> ;
 	doap:name "setBfreak Tonewheel Organ";
 	doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-	lv2:microVersion 95 ;lv2:minorVersion 2049 ;
+        lv2:binary <b_synth.so>  ;
+	@VERSION@
 	lv2:optionalFeature lv2:hardRTCapable ;
 	lv2:requiredFeature urid:map , work:schedule ;
 	lv2:extensionData state:interface , work:interface ;

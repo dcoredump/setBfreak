@@ -131,7 +131,8 @@ while($CFG=shift(@ARGV))
 		}
 
 		$voice=$config{'name'};
-		#delete($config{'name'});
+		delete($config{'name'});
+
 		if(defined($option{'voice_no'}) && defined($option{'bank'}))
 		{
 			if($voice_no<10)

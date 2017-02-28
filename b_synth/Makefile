@@ -72,7 +72,7 @@ install: $(targets)
 ifeq ($(LV2AVAIL), yes)
 	install -d $(DESTDIR)$(lv2dir)/$(LV2NAME)
 	install -m755 $(LV2NAME)$(LIB_EXT) $(DESTDIR)$(lv2dir)/$(LV2NAME)
-	install -m644 manifest.ttl $(LV2NAME).ttl modgui.ttl $(DESTDIR)$(lv2dir)/$(LV2NAME)
+	install -m644 manifest.ttl $(LV2NAME).ttl modgui.ttl presets.ttl $(DESTDIR)$(lv2dir)/$(LV2NAME)
 	install -d $(DESTDIR)$(lv2dir)/$(LV2NAME)/hardware
 	install -m644 hardware/default.cfg $(DESTDIR)$(lv2dir)/$(LV2NAME)/hardware
 	cp -R modgui $(DESTDIR)$(lv2dir)/$(LV2NAME)
