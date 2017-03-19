@@ -74,9 +74,9 @@ ifeq ($(shell pkg-config --exists sndfile \
   BXCC=$(CXX)
 endif
 
-all: setBfree$(EXE_EXT)
+all: setBfreak$(EXE_EXT)
 
-setBfree$(EXE_EXT): $(HEADERS) $(OBJS)
+setBfreak$(EXE_EXT): $(HEADERS) $(OBJS)
 	$(BXCC) $(CPPFLAGS) $(CFLAGS) \
 		-o $(@) $(OBJS) $(WEAKJACK) \
 		$(LDFLAGS) $(LOADLIBES)
@@ -120,18 +120,18 @@ program.o: defaultpgm.h
 	+$(MAKE) -C ../setBfreak_conv convolution.o
 
 clean:
-	rm -f *.o core *.log *~ setBfree$(EXE_EXT) configd programd
+	rm -f *.o core *.log *~ setBfreak$(EXE_EXT) configd programd
 
-install: setBfree
+install: setBfreak
 	install -d $(DESTDIR)$(bindir)
-	install -m755 setBfree $(DESTDIR)$(bindir)
+	install -m755 setBfreak $(DESTDIR)$(bindir)
 	install -d $(DESTDIR)$(sharedir)/cfg
 	install -d $(DESTDIR)$(sharedir)/pgm
 	install -m644 ../cfg/*.cfg $(DESTDIR)$(sharedir)/cfg
 	install -m644 ../pgm/*.pgm $(DESTDIR)$(sharedir)/pgm
 
 uninstall:
-	rm -f $(DESTDIR)$(bindir)/setBfree
+	rm -f $(DESTDIR)$(bindir)/setBfreak
 	rm -f $(DESTDIR)$(sharedir)/cfg/*
 	rm -f $(DESTDIR)$(sharedir)/pgm/*
 	-rmdir $(DESTDIR)$(bindir)

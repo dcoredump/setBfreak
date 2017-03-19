@@ -18,7 +18,7 @@ endif
 LV2VERSION=$(VERSION)
 
 bindir = $(PREFIX)/bin
-sharedir = $(PREFIX)/share/setBfree
+sharedir = $(PREFIX)/share/setBfreak
 lv2dir = /zynthian/zynthian-plugins/lv2
 
 CFLAGS ?= $(OPTIMIZATIONS) -Wall

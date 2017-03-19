@@ -1,4 +1,4 @@
-MODNAME=setBfree
+MODNAME=setBfreak
 include ../common.mak
 include ../git2lv2.mk
 
