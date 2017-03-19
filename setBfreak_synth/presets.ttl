@@ -2,9 +2,9 @@
 @prefix pset: <http://lv2plug.in/ns/ext/presets#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__01__L_Cello>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__01__L_Cello>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -136,9 +136,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__02__L_Flute___String>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__02__L_Flute___String>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -270,9 +270,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__03__L_Clarinet>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__03__L_Clarinet>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -404,9 +404,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__04__L_Salicional>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__04__L_Salicional>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -538,9 +538,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__05__L_Great_no_reeds>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__05__L_Great_no_reeds>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -672,9 +672,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__06__L_Open_Diaposon>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__06__L_Open_Diaposon>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -806,9 +806,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__07__L_Full_Great>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__07__L_Full_Great>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -940,9 +940,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__08__L_Tibia_Clausa>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__08__L_Tibia_Clausa>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -1074,9 +1074,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__09__L_Full_Great_with_16_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__09__L_Full_Great_with_16_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 4.0 ;
@@ -1208,9 +1208,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__10__L_Cello_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__10__L_Cello_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -1342,9 +1342,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__11__L_Dulciana_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__11__L_Dulciana_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -1476,9 +1476,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__12__L_Vibraharp_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__12__L_Vibraharp_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -1610,9 +1610,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__13__L_Vox_8____Tibia_4_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__13__L_Vox_8____Tibia_4_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -1744,9 +1744,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__14__L_String_Accomp._8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__14__L_String_Accomp._8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -1878,9 +1878,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__15__L_Open_Diapason_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__15__L_Open_Diapason_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -2012,9 +2012,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__16__L_Full_Accomp._16_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__16__L_Full_Accomp._16_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 4.0 ;
@@ -2146,9 +2146,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__17__L_Tibia_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__17__L_Tibia_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -2280,9 +2280,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#lower_voices__18__L_Bombarde_16_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#lower_voices__18__L_Bombarde_16_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 8.0 ;
@@ -2414,9 +2414,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__01__Silence>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__01__Silence>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -2548,9 +2548,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__02__8__solo>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__02__8__solo>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -2682,9 +2682,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__03__AWSOP>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__03__AWSOP>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -2816,9 +2816,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__04__Blues_1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__04__Blues_1>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -2950,9 +2950,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__05__Blues_2>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__05__Blues_2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3084,9 +3084,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__06__Booker_T_Jones>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__06__Booker_T_Jones>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3218,9 +3218,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__07__Brian_Auger_2nd>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__07__Brian_Auger_2nd>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3352,9 +3352,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__08__Brian_Auger_3rd>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__08__Brian_Auger_3rd>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3486,9 +3486,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__09__ELP__Keith_Emerson_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__09__ELP__Keith_Emerson_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3620,9 +3620,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__10__Errol_G._1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__10__Errol_G._1>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3754,9 +3754,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__11__Errol_G._2>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__11__Errol_G._2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -3888,9 +3888,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__12__Errol_G._3>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__12__Errol_G._3>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4022,9 +4022,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__13__Fredriks_tfn_1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__13__Fredriks_tfn_1>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4097,140 +4097,6 @@
         ] , [
                 lv2:symbol "drawbar_upper_6" ;
                 pset:value 7.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_7" ;
-                pset:value 2.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_8" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_9" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "keysplitlowers" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "keysplitpedals" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "perc" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "percharm" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "percspeed" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "percvol" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose_lower" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose_pedals" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose_upper" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "trssplitlower" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "trssplitpedals" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "trssplitupper" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "vibrato" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "vibratolower" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "vibratoupper" ;
-                pset:value 0.0 ;
-        ] .
-
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__14__Fredriks_tfn_2>
-        a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
-        lv2:port [
-                lv2:symbol "drawbar_lower_1" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_2" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_3" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_4" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_5" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_6" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_7" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_8" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_9" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_1" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_2" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_3" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_4" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_5" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_6" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_7" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_8" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_9" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_1" ;
-                pset:value 7.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_2" ;
-                pset:value 5.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_3" ;
-                pset:value 8.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_4" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_5" ;
-                pset:value 1.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_6" ;
-                pset:value 6.0 ;
         ] , [
                 lv2:symbol "drawbar_upper_7" ;
                 pset:value 2.0 ;
@@ -4290,9 +4156,143 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__15__Fredriks_tfn_3>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__14__Fredriks_tfn_2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
+        lv2:port [
+                lv2:symbol "drawbar_lower_1" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_2" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_3" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_4" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_5" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_6" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_7" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_8" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_9" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_1" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_2" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_3" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_4" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_5" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_6" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_7" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_8" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_9" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_1" ;
+                pset:value 7.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_2" ;
+                pset:value 5.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_3" ;
+                pset:value 8.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_4" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_5" ;
+                pset:value 1.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_6" ;
+                pset:value 6.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_7" ;
+                pset:value 2.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_8" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_9" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "keysplitlowers" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "keysplitpedals" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "perc" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "percharm" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "percspeed" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "percvol" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose_lower" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose_pedals" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose_upper" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "trssplitlower" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "trssplitpedals" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "trssplitupper" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "vibrato" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "vibratolower" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "vibratoupper" ;
+                pset:value 0.0 ;
+        ] .
+
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__15__Fredriks_tfn_3>
+        a pset:Preset ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4424,9 +4424,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__16__Gospel>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__16__Gospel>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4558,9 +4558,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__17__Green_Onions_1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__17__Green_Onions_1>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4692,9 +4692,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__18__Green_Onions_2>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__18__Green_Onions_2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4826,9 +4826,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__19__Greg_Rolie>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__19__Greg_Rolie>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -4960,9 +4960,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__20__Jesse_Crawford>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__20__Jesse_Crawford>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -5094,9 +5094,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__21__Jimmy_Smith>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__21__Jimmy_Smith>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -5193,140 +5193,6 @@
         ] , [
                 lv2:symbol "percspeed" ;
                 pset:value 0.0 ;
-        ] , [
-                lv2:symbol "percvol" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose_lower" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose_pedals" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "transpose_upper" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "trssplitlower" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "trssplitpedals" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "trssplitupper" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "vibrato" ;
-                pset:value 6.0 ;
-        ] , [
-                lv2:symbol "vibratolower" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "vibratoupper" ;
-                pset:value 0.0 ;
-        ] .
-
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__22__Jimmy_Smith_Plus>
-        a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
-        lv2:port [
-                lv2:symbol "drawbar_lower_1" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_2" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_3" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_4" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_5" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_6" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_7" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_8" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_lower_9" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_1" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_2" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_3" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_4" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_5" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_6" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_7" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_8" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_pedal_9" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_1" ;
-                pset:value 8.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_2" ;
-                pset:value 8.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_3" ;
-                pset:value 8.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_4" ;
-                pset:value 8.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_5" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_6" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_7" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_8" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "drawbar_upper_9" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "keysplitlowers" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "keysplitpedals" ;
-                pset:value 0.0 ;
-        ] , [
-                lv2:symbol "perc" ;
-                pset:value 1.0 ;
-        ] , [
-                lv2:symbol "percharm" ;
-                pset:value 1.0 ;
-        ] , [
-                lv2:symbol "percspeed" ;
-                pset:value 1.0 ;
         ] , [
                 lv2:symbol "percvol" ;
                 pset:value 0.0 ;
@@ -5362,9 +5228,143 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__23__Joey_DeFranco_1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__22__Jimmy_Smith_Plus>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
+        lv2:port [
+                lv2:symbol "drawbar_lower_1" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_2" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_3" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_4" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_5" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_6" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_7" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_8" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_lower_9" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_1" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_2" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_3" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_4" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_5" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_6" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_7" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_8" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_pedal_9" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_1" ;
+                pset:value 8.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_2" ;
+                pset:value 8.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_3" ;
+                pset:value 8.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_4" ;
+                pset:value 8.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_5" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_6" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_7" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_8" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "drawbar_upper_9" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "keysplitlowers" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "keysplitpedals" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "perc" ;
+                pset:value 1.0 ;
+        ] , [
+                lv2:symbol "percharm" ;
+                pset:value 1.0 ;
+        ] , [
+                lv2:symbol "percspeed" ;
+                pset:value 1.0 ;
+        ] , [
+                lv2:symbol "percvol" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose_lower" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose_pedals" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "transpose_upper" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "trssplitlower" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "trssplitpedals" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "trssplitupper" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "vibrato" ;
+                pset:value 6.0 ;
+        ] , [
+                lv2:symbol "vibratolower" ;
+                pset:value 0.0 ;
+        ] , [
+                lv2:symbol "vibratoupper" ;
+                pset:value 0.0 ;
+        ] .
+
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__23__Joey_DeFranco_1>
+        a pset:Preset ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -5496,9 +5496,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__24__Joey_DeFranco_2>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__24__Joey_DeFranco_2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -5630,9 +5630,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__25__John_Lord>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__25__John_Lord>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -5764,9 +5764,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__26__Lenny_Dee_1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__26__Lenny_Dee_1>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -5898,9 +5898,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__27__Lenny_Dee_2>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__27__Lenny_Dee_2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6032,9 +6032,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__28__Paul_Shaffer>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__28__Paul_Shaffer>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6166,9 +6166,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__29__Procul_Harum>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__29__Procul_Harum>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6300,9 +6300,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__30__Reggae>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__30__Reggae>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6434,9 +6434,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__31__Rod_Argent>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__31__Rod_Argent>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6568,9 +6568,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__32__Standard_B>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__32__Standard_B>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6702,9 +6702,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__33__Standard_B_mid_whistle>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__33__Standard_B_mid_whistle>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6836,9 +6836,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__34__Steve_Winwood_1>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__34__Steve_Winwood_1>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -6970,9 +6970,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__35__Steve_Winwood_2>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__35__Steve_Winwood_2>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7104,9 +7104,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__36__Tom_Coster__Santana_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__36__Tom_Coster__Santana_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7238,9 +7238,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#most_popular__37__Waa-waa__2nd_bar_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#most_popular__37__Waa-waa__2nd_bar_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7372,9 +7372,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#pedals__01__Brassy_pedals>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#pedals__01__Brassy_pedals>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7506,9 +7506,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#pedals__02__Hollow_pedals>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#pedals__02__Hollow_pedals>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7640,9 +7640,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#pedals__03__Cute_pedals>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#pedals__03__Cute_pedals>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7774,9 +7774,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__01__U_Stopped_Flute>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__01__U_Stopped_Flute>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -7908,9 +7908,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__02__U_Dulciana>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__02__U_Dulciana>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8042,9 +8042,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__03__U_French_Horn>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__03__U_French_Horn>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8176,9 +8176,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__04__U_Salicional>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__04__U_Salicional>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8310,9 +8310,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__05__U_Flutes_8__4_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__05__U_Flutes_8__4_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8444,9 +8444,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__06__U_Oboe_Horn>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__06__U_Oboe_Horn>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8578,9 +8578,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__07__U_Swell_Diapason>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__07__U_Swell_Diapason>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8712,9 +8712,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__08__U_Trumpet>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__08__U_Trumpet>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8846,9 +8846,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__09__U_Full_Swell>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__09__U_Full_Swell>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -8980,9 +8980,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__10__U_French_Horn_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__10__U_French_Horn_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9114,9 +9114,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__11__U_Tibias_8__4_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__11__U_Tibias_8__4_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9248,9 +9248,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__12__U_Clarinet_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__12__U_Clarinet_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9382,9 +9382,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__13__U_Novel_Solo_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__13__U_Novel_Solo_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9516,9 +9516,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__14__U_Theatre_Solo_16_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__14__U_Theatre_Solo_16_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9650,9 +9650,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__15__U_Oboe_Horn_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__15__U_Oboe_Horn_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9784,9 +9784,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__16__U_Full_Tibias_16_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__16__U_Full_Tibias_16_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -9918,9 +9918,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__17__U_Trumpet_8_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__17__U_Trumpet_8_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;
@@ -10052,9 +10052,9 @@
                 pset:value 0.0 ;
         ] .
 
-<https://github.com/dcoredump/setBfreak/b_synth#upper_voices__18__U_Full_Theatre_Brass_16_>
+<https://github.com/dcoredump/setBfreak/setBfreak_synth#upper_voices__18__U_Full_Theatre_Brass_16_>
         a pset:Preset ;
-        lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;
+        lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;
         lv2:port [
                 lv2:symbol "drawbar_lower_1" ;
                 pset:value 0.0 ;

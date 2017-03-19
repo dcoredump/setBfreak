@@ -25,7 +25,7 @@
 
 #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
 
-#define B3O_URI "https://github.com/dcoredump/setBfreak/b_overdrive"
+#define B3O_URI "https://github.com/dcoredump/setBfreak/setBfreak_overdrive"
 
 typedef enum {
   B30_INPUT      = 0,

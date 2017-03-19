@@ -30,8 +30,8 @@
 
 #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
 
-#define B3W_URI "https://github.com/dcoredump/setBfreak/b_whirl#simple"
-#define B3W_URI_EXT "https://github.com/dcoredump/setBfreak/b_whirl#extended"
+#define B3W_URI "https://github.com/dcoredump/setBfreak/setBfreak_whirl#simple"
+#define B3W_URI_EXT "https://github.com/dcoredump/setBfreak/setBfreak_whirl#extended"
 
 float* null_dot_null=NULL;
 

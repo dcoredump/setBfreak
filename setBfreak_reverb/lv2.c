@@ -25,7 +25,7 @@
 
 #include "lv2/lv2plug.in/ns/lv2core/lv2.h"
 
-#define B3R_URI "https://github.com/dcoredump/setBfreak/b_reverb"
+#define B3R_URI "https://github.com/dcoredump/setBfreak/setBfreak_reverb"
 
 typedef enum {
   B3R_INPUT      = 0,

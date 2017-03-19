@@ -4,10 +4,10 @@
 <https://github.com/dcoredump/setBfreak/setBfreak_whirl#simple>
     modgui:gui [
         modgui:resourcesDirectory <modgui> ;
-        modgui:iconTemplate <modgui/icon-setbfree-whirl-speaker-extended-version.html> ;
-        modgui:stylesheet <modgui/stylesheet-setbfree-whirl-speaker-extended-version.css> ;
-        modgui:screenshot <modgui/screenshot-setbfree-whirl-speaker-extended-version.png> ;
-        modgui:thumbnail <modgui/thumbnail-setbfree-whirl-speaker.png> ;
+        modgui:iconTemplate <modgui/icon-setBfreak-whirl-speaker-extended-version.html> ;
+        modgui:stylesheet <modgui/stylesheet-setBfreak-whirl-speaker-extended-version.css> ;
+        modgui:screenshot <modgui/screenshot-setBfreak-whirl-speaker-extended-version.png> ;
+        modgui:thumbnail <modgui/thumbnail-setBfreak-whirl-speaker.png> ;
         modgui:brand "dcoredump" ;
         modgui:label "setBfreak Whirl Speaker" ;
         modgui:model "boxy" ;
