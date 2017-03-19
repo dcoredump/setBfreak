@@ -19,7 +19,7 @@
 	doap:maintainer <https://github.com/dcoredump/setBfreak#me> ;
 	doap:name "setBfreak Whirl Speaker - Extended Version";
 	doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-	lv2:microVersion 57 ;lv2:minorVersion 2057 ;
+	lv2:microVersion 59 ;lv2:minorVersion 2057 ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 	lv2:port
 	[

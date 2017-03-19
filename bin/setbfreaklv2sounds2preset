@@ -31,9 +31,9 @@ print MANIFEST "\@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n";
 #print MANIFEST "\@prefix doap: <http://usefulinc.com/ns/doap#> .\n";
 #print MANIFEST "\@prefix foaf: <http://xmlns.com/foaf/0.1/> .\n";
 print MANIFEST "\n";
-print MANIFEST "<https://github.com/dcoredump/setBfreak/b_synth>\n";
+print MANIFEST "<https://github.com/dcoredump/setBfreak/setBfreak_synth>\n";
 print MANIFEST "    a lv2:Plugin;\n";
-print MANIFEST "    rdfs:seeAlso <b_synth.ttl> ;\n";
+print MANIFEST "    rdfs:seeAlso <setBfreak_synth.ttl> ;\n";
 print MANIFEST "    rdfs:seeAlso <modgui.ttl> .\n";
 print MANIFEST "\n";
 
@@ -76,14 +76,14 @@ sub insert_data
 		return;
 	}
 
-	print MANIFEST "<https://github.com/dcoredump/setBfreak/b_synth#".$voice_name.">\n";
+	print MANIFEST "<https://github.com/dcoredump/setBfreak/setBfreak_synth#".$voice_name.">\n";
 	print MANIFEST "    a pset:Preset ;\n";
 	print MANIFEST "    rdfs:label \"".$voice_name."\" ;\n";
-	print MANIFEST "    lv2:appliesTo <https://github.com/dcoredump/setBfreak/b_synth> ;\n";
+	print MANIFEST "    lv2:appliesTo <https://github.com/dcoredump/setBfreak/setBfreak_synth> ;\n";
 	print MANIFEST "    rdfs:seeAlso <presets.ttl> .\n";
 	print MANIFEST "\n";
 
-	print PRESETS "<https://github.com/dcoredump/setBfreak/b_synth#".$voice_name.">\n";
+	print PRESETS "<https://github.com/dcoredump/setBfreak/setBfreak_synth#".$voice_name.">\n";
 
 	open(VOICE,"<".$voice."/".$file)||die("Cannot open ".$voice."/".$file.": $!");
 	while($l=<VOICE>)

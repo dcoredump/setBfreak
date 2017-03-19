@@ -24,7 +24,7 @@
 
 use Data::Dumper;
 
-$LV2_BUNDLE_NAME="b_synth";
+$LV2_BUNDLE_NAME="setBfree_synth";
 $LV2_URI="https://github.com/dcoredump/setBfreak/".$LV2_BUNDLE_NAME;
 $LV2_INSTALL_PATH="/zynthian/zynthian-my-plugins/lv2";
 
