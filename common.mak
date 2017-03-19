@@ -128,7 +128,7 @@ HAVE_UI=$(shell pkg-config --exists $(PKG_GL_LIBS) ftgl && echo $(FONT_FOUND))
 
 ifeq ($(LV2AVAIL)$(HAVE_UI)$(HAVE_IDLE), yesyesyes)
   UICFLAGS=-I..
-  UIDEPS=../pugl/pugl.h ../pugl/pugl_internal.h ../b_synth/ui_model.h
+  UIDEPS=../pugl/pugl.h ../pugl/pugl_internal.h ../setBfree_synth/ui_model.h
   UIDEPS+=$(TX)drawbar.c $(TX)wood.c $(TX)dial.c
   UIDEPS+=$(TX)btn_vibl.c $(TX)btn_vibu.c $(TX)btn_overdrive.c $(TX)btn_perc_volume.c
   UIDEPS+=$(TX)btn_perc.c $(TX)btn_perc_decay.c $(TX)btn_perc_harmonic.c
@@ -179,7 +179,7 @@ LV2OBJ= \
   ../src/pgmParser.c \
   ../src/memstream.c \
   ../src/midnam.c \
-  ../b_whirl/eqcomp.c \
-  ../b_whirl/whirl.c \
-  ../b_overdrive/overdrive.c \
-  ../b_reverb/reverb.c \
+  ../setBfreak_whirl/eqcomp.c \
+  ../setBfreak_whirl/whirl.c \
+  ../setBfreak_overdrive/overdrive.c \
+  ../setBfreak_reverb/reverb.c \

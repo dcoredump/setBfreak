@@ -1,0 +1,11 @@
+
+@prefix ui:    <http://lv2plug.in/ns/extensions/ui#> .
+
+<http://github.com/dcoredump/setBfreak_whirl#extended>
+	ui:ui <http://github.com/dcoredump/setBfreak_whirl#ui_gl> ;
+	.
+
+<http://github.com/dcoredump/setBfreak_whirl#ui_gl>
+	a ui:@UI_TYPE@;
+	@UI_REQ@
+	.
