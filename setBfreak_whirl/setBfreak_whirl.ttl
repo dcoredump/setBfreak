@@ -19,7 +19,7 @@
 	doap:maintainer <https://github.com/dcoredump/setBfreak#me> ;
 	doap:name "setBfreak Whirl Speaker";
 	doap:license <http://usefulinc.com/doap/licenses/gpl> ;
-	lv2:microVersion 57 ;lv2:minorVersion 2057 ;
+	lv2:microVersion 65 ;lv2:minorVersion 2057 ;
 	lv2:optionalFeature lv2:hardRTCapable ;
 	lv2:port
 	[
@@ -51,7 +51,7 @@
                 lv2:index 3 ;
                 lv2:symbol "motor" ;
                 lv2:name "Motor on/off" ;
-                lv2:default 0 ;
+                lv2:default 1 ;
                 lv2:minimum 0 ;
                 lv2:maximum 1 ;
                 lv2:portProperty lv2:toggled, lv2:integer ;
